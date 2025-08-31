@@ -7,25 +7,13 @@ Definição do problema e ideia de solução a partir da perspectiva do usuário
 Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
 
 ## Personas
+<img width="672" height="505" alt="persona 1" src="https://github.com/user-attachments/assets/4f138aa3-ba7c-4c40-8c20-4bccd50f2b2f" />
+<img width="672" height="505" alt="persona 2" src="https://github.com/user-attachments/assets/f08b98ae-0d57-435f-b3ed-7d812c1e784e" />
+<img width="672" height="505" alt="persona 3" src="https://github.com/user-attachments/assets/fcb4e12b-7ded-46d9-a55c-9bf80c919f47" />
+<img width="672" height="505" alt="persona 4" src="https://github.com/user-attachments/assets/6be5878b-8136-4e85-867a-9e250f1d18e4" />
+<img width="672" height="505" alt="persona 5" src="https://github.com/user-attachments/assets/131e0dcf-73f2-4bd7-9627-4f2b21ddf42c" />
 
-Identifique, em torno de, 5 personas. Para cada persona, lembre-se de descrever suas angústicas, frustrações e expectativas de vida relacionadas ao problema. Além disso, defina uma "aparência" para a persona. Para isso, você poderá utilizar sites como [https://this-person-does-not-exist.com/pt#google_vignette](https://this-person-does-not-exist.com/pt) ou https://thispersondoesnotexist.com/ 
 
-Utilize também como referência o exemplo abaixo:
-
-<img src="https://github.com/ICEI-PUC-Minas-PMV-ADS/IntApplicationProject-Template/blob/main/docs/img/AnaClara1.png" alt="Persona1"/>
-
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
-
-> **Links Úteis**:
-> 
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
 
 ## Histórias de Usuários
 
@@ -33,10 +21,19 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Ana Clara  | Uma forma de identificar se uma agência é realmente confiável           | Me sentir mais segura ao contratar seus serviços               |
-|Ana Clara       | Ter um mecanismo eficiente e rápido de comunicação                 | Que eu possa sanar todas as minhas dúvidas rapidamente |
+|Atendente de call center  | Quero registrar denúncias de assédio moral | Para garantir que minhas queixas sejam analisadas sem represálias |
+|Atendente de call center | Quero receber uma notificação de confirmação ao registrar minha denúncia | Para ter segurança de que foi recebida pelo sistema |
+|Estudante universitário | Quero registrar denúncias de violência de forma anônima | Para proteger minha identidade |
+|Estudante universitário | Quero acompanhar o status da minha denúncia | Para saber se está sendo analisada ou concluída |
+|Professora | Quero registrar denúncias de violência doméstica envolvendo alunos | Para que sejam tomadas medidas de proteção |
+|Professora | Quero receber orientação no sistema sobre como formalizar denúncias | Para para que meus relatos tenham validade legal |
+|Motorista de Ônibus | Quero registrar denúncias sobre más condições de segurança nos veículos | Para proteger passageiros e colegas de trabalho |
+|Motorista de Ônibus | Quero acompanhar o status da minha denúncia | Para verificar se as melhorias estão sendo implementadas |
+|Administrador do Sistema | Quero visualizar todas as denúncias registradas | Para analisar e priorizar as que exigem ação imediata |
+|Administrador do Sistema | Quero atribuir denúncias aos setores responsáveis | Para garantir que sejam resolvidas corretamente |
+|Administrador do Sistema | Quero atualizar o status das denúncias (em análise, concluída) | Para manter os usuários informados sobre o andamento |
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
+
 
 > **Links Úteis**:
 > - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
@@ -50,19 +47,36 @@ Apresente aqui as histórias de usuário que são relevantes para o projeto de s
 As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
 
 ### Requisitos Funcionais
+| ID    | Descrição do Requisito                                                                                                        | Prioridade |
+| ----- | ----------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| RF-01 | O sistema deve permitir que o usuário registre uma denúncia de forma anônima ou identificada.                                 | Alta       |
+| RF-02 | O sistema deve permitir que o usuário selecione o tipo de denúncia (produto, serviço, violência, estabelecimento, etc.).      | Alta       |
+| RF-03 | O sistema deve permitir que o usuário forneça uma descrição detalhada e a localização da denúncia.                            | Alta       |
+| RF-04 | O sistema deve gerar automaticamente um número de protocolo único para cada denúncia registrada.                              | Média      |
+| RF-05 | O sistema deve permitir que o usuário altere uma denúncia já registrada, desde que esteja em status "aberta" ou "em análise". | Alta       |
+| RF-06 | O sistema deve permitir que o usuário exclua uma denúncia registrada, desde que esteja em status "aberta" ou "em análise".    | Média      |
+| RF-07 | O sistema deve notificar o administrador caso haja alteração, inclusão ou exclusão de denúncia.                               | Alta       |
+| RF-08 | O sistema deve permitir que o usuário acompanhe o status da denúncia (aberta, em análise, concluída).                         | Média      |
+| RF-09 | O sistema deve permitir que administradores visualizem todas as denúncias cadastradas.                                        | Média      |
+| RF-10 | O administrador deve poder atribuir a denúncia a um setor responsável para análise ou resolução.                              | Alta       |
+| RF-11 | O sistema deve permitir que o usuário ative o compartilhamento da sua localização em tempo real durante o modo SOS.           | Alta       |
+| RF-12 | O sistema deve notificar ao administrador com prioridade quando acionar o modo “SOS”.                                         | Alta       |
+| RF-13 | O sistema deve permitir que novos usuários se cadastrem fornecendo nome, e-mail e senha.                                      | Alta       |
+| RF-14 | O sistema deve permitir a autenticação (login) de usuários e administradores através de e-mail e senha.                       | Alta       |
+| RF-15 | O sistema deve permitir que um usuário autenticado encerre sua sessão (logout).                                               | Média      |
+| RF-16 | O sistema deve possuir um método seguro para o cadastro de novos administradores (não público).                               | Alta       |
 
-|ID    | Descrição do Requisito  | Prioridade |
-|------|-----------------------------------------|----|
-|RF-001| A aplicação deve permitir que o usuário avalie uma agência de intercâmbio com base na sua experiência| ALTA | 
-|RF-002| A aplicação deve permitir que o usuário inclua comentários ao fazer uma avaliação de uma agência de intercâmbio    | ALTA |
-|RF-003| A aplicação deve permitir que o usuário consulte todas as agências de intercâmbio cadastradas ordenando-as com base em suas notas | ALTA |
 
 ### Requisitos não Funcionais
 
-|ID     | Descrição do Requisito  |Prioridade |
-|-------|-------------------------|----|
-|RNF-001| A aplicação deve ser responsiva | MÉDIA | 
-|RNF-002| A aplicação deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+| ID     | Descrição                                                            | Prioridade |
+| ------ | -------------------------------------------------------------------- | ---------- |
+| RNF-01 | O sistema deve ser desenvolvido usando: HTML, CSS, C# e SQL          | Média      |
+| RNF-02 | O sistema deve ser responsivo a telas menores                        | Alta       |
+| RNF-03 | O sistema deve estar disponível via servidor online                  | Média      |
+| RNF-04 | O sistema deve ter todos os dados criptografados e seguros           | Alta       |
+| RNF-05 | O sistema deve estabelecer protocolos HTTPS                          | Alta       |
+| RNF-06 | O sistema deve ter disponibilidade 24 horas durante 7 dias da semana | Alta       |
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
@@ -96,6 +110,10 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 > - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
 
 ## Diagrama de Casos de Uso
+
+
+<img width="856" height="744" alt="image" src="https://github.com/user-attachments/assets/a79c7b0e-a043-47a0-b0c2-de3c13d39822" />
+
 
 O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
 
