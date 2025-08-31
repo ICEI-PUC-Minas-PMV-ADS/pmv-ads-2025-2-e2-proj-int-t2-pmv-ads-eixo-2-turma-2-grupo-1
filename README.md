@@ -1,23 +1,24 @@
-# TÍTULO DO PROJETO
+# Sistema de denúncia de violência ou pessoas em situação de vulnerabilidade
 
-`CURSO`
+`CURSO: Análise e desenvilvimento de sistemas`
 
-`DISCIPLINA`
+`Projeto: Desenvolvimento de uma Aplicação Interativa`
 
-`SEMESTRE`
+`SEMESTRE: 2°`
 
 Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Cauã Marcos da Silva 
+* Henrique Alves Gonçalves
+* Henrique Gaze Rodrigues
+* Kerlison Luan Andrade Lopes
+* Maria Eduarda Cândido Alves Guerra
 
 ## Orientador
 
-* Nome completo do professor
+* José Wilson da Costa
 
 ## Instruções de Instalação, Execução e Acesso
 
