@@ -99,7 +99,8 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 ## Diagrama de Casos de Uso
 
 
-<img width="886" height="770" alt="image" src="https://github.com/user-attachments/assets/29c2c2ad-550b-47c2-93de-626bf13c3c17" />
+<img width="886" height="763" alt="image" src="https://github.com/user-attachments/assets/c0d94d85-4c62-4752-b506-51de7274c872" />
+
 
 
 
