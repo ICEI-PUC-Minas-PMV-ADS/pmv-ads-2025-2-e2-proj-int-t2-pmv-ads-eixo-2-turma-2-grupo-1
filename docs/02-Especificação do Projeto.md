@@ -78,20 +78,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 | RNF-05 | O sistema deve estabelecer protocolos HTTPS                          | Alta       |
 | RNF-06 | O sistema deve ter disponibilidade 24 horas durante 7 dias da semana | Alta       |
 
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
 ## Restrições
 
@@ -112,7 +99,8 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 ## Diagrama de Casos de Uso
 
 
-<img width="856" height="744" alt="image" src="https://github.com/user-attachments/assets/a79c7b0e-a043-47a0-b0c2-de3c13d39822" />
+<img width="886" height="770" alt="image" src="https://github.com/user-attachments/assets/29c2c2ad-550b-47c2-93de-626bf13c3c17" />
+
 
 
 O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
