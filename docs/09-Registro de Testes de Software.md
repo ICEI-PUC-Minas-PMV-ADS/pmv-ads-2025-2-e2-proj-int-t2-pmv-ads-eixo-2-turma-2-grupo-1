@@ -2,27 +2,80 @@
 
 <span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>, <a href="8-Plano de Testes de Software.md"> Plano de Testes de Software</a>
 
-Para cada caso de teste definido no Plano de Testes de Software, realize o registro das evidências dos testes feitos na aplicação pela equipe, que comprovem que o critério de êxito foi alcançado (ou não!!!). Para isso, utilize uma ferramenta de captura de tela que mostre cada um dos casos de teste definidos (obs.: cada caso de teste deverá possuir um vídeo do tipo _screencast_ para caracterizar uma evidência do referido caso).
+### **CT01 – Cadastrar Perfil**
+- **Objetivo:** Verificar se o usuário consegue criar uma conta.
+- **Passos:**  
+  Acessar site → Clicar em "Criar Conta" → Preencher dados → Aceitar termos → Registrar.
+- **Critério de Êxito:** Conta criada com confirmação.
 
-| **Caso de Teste** 	| **CT01 – Cadastrar perfil** 	|
-|:---:	|:---:	|
-|	Requisito Associado 	| RF-00X - A aplicação deve apresentar, na página principal, a funcionalidade de cadastro de usuários para que esses consigam criar e gerenciar seu perfil. |
-|Registro de evidência | www.teste.com.br/drive/ct-01 |
+---
 
-| **Caso de Teste** 	| **CT02 – Realizar login** 	|
-|:---:	|:---:	|
-|	Requisito Associado 	| RF-00Y - A aplicação deve permitir que um usuário previamente cadastrado faça login |
-|Registro de evidência | www.teste.com.br/drive/ct-02 |
+### **CT02 – Registrar Denúncia Identificada**
+- **Objetivo:** Garantir que o usuário autenticado consiga registrar uma denúncia.
+- **Passos:**  
+  Login → Acessar "Registrar Denúncia" → Preencher descrição → Inserir anexos (opcional) → Enviar.
+- **Critério de Êxito:** Denúncia registrada com número de protocolo.
 
-## Relatório de testes de software
+---
 
-Apresente e discuta detalhadamente os resultados obtidos nos testes realizados, destacando tanto os pontos fortes quanto as fragilidades identificadas na solução. Explique como os aspectos positivos contribuem para o desempenho e a usabilidade do sistema, e como os pontos fracos impactam sua eficácia.
+### **CT03 – Inclusão de Localização na Denúncia**
+- **Objetivo:** Confirmar que o usuário consiga informar local da ocorrência.
+- **Passos:**  
+  Login → "Registrar Denúncia" → Informar descrição → Adicionar localização → Enviar.
+- **Critério de Êxito:** Denúncia registrada com endereço armazenado corretamente.
 
-Descreva as principais falhas detectadas durante os testes, fornecendo exemplos concretos e evidências que sustentem essas observações. Explicite os impactos dessas falhas na experiência do usuário, na funcionalidade do sistema e nos objetivos do projeto.
+---
 
-Com base nessas análises, detalhe as estratégias que o grupo pretende adotar para corrigir as deficiências e aprimorar a solução nas próximas iterações. Inclua ações específicas, como ajustes no código, modificações na interface, otimizações de desempenho ou melhorias na acessibilidade e usabilidade.
+### **CT04 – Preenchimento de Campos Obrigatórios**
+- **Objetivo:** Verificar se o sistema impede envio de denúncia sem dados essenciais.
+- **Passos:**  
+  Acessar "Registrar Denúncia" → Tentar enviar sem preencher descrição.
+- **Critério de Êxito:** Sistema bloqueia envio e exibe alerta sobre campo obrigatório.
+---
 
-Por fim, apresente e/ou proponha as melhorias a partir dos testes realizados, destacando os ganhos obtidos e como essas alterações contribuem para a evolução do projeto.
+### **CT05 – Consultar Status da Denúncia**
+- **Objetivo:** Validar se o usuário consegue acompanhar suas denúncias.
+- **Passos:**  
+  Login → Acessar "Minhas Denúncias" → Selecionar denúncia → Visualizar status.
+- **Critério de Êxito:** Status exibido corretamente
+---
 
-> **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
+### **CT06 – Registrar Denúncia Anônima**
+- **Objetivo:** Validar o envio de denúncia sem identificação do usuário.
+- **Passos:**  
+  Acessar "Registrar Denúncia" sem login → Preencher descrição → Anexar arquivos (opcional) → Enviar.
+- **Critério de Êxito:** Denúncia aceita e protocolo gerado sem vinculação de usuário.
+
+---
+
+### **CT07 – Excluir Denúncia Antes da Análise**
+- **Objetivo:** Garantir que o usuário possa cancelar denúncia antes de ser analisada.
+- **Passos:**  
+  Login → "Minhas Denúncias" → Selecionar denúncia pendente → Cancelar → Confirmar.
+- **Critério de Êxito:** Denúncia cancelada e status atualizado para "Cancelada pelo Usuário".
+
+---
+
+### **CT08 – Filtrar Denúncias por Status**
+- **Objetivo:** Validar que o sistema exiba corretamente denúncias conforme filtros aplicados.
+- **Passos:**  
+  Login administrador → "Painel de Denúncias" → Selecionar filtro (ex: “Em análise”) → Aplicar.
+- **Critério de Êxito:** Lista exibida apenas com denúncias do status selecionado.
+
+---
+
+### **CT09 – Redefinir Senha por E-mail**
+- **Objetivo:** Verificar se o usuário consegue redefinir senha por e-mail.
+- **Passos:**  
+  Login → "Esqueci minha senha" → Informar e-mail → Acessar link → Nova senha.
+- **Critério de Êxito:** Senha redefinida com sucesso.
+
+---
+
+### **CT10 – Denúncia com Palavras Proibidas (Filtro de Conteúdo)**
+- **Objetivo:** Verificar se o sistema identifica e bloqueia palavras ofensivas/inadequadas.
+- **Passos:**  
+  Login → "Registrar Denúncia" → Inserir descrição com palavras proibidas → Enviar.
+- **Critério de Êxito:** Sistema rejeita envio e exibe mensagem de alerta.
+
+---
