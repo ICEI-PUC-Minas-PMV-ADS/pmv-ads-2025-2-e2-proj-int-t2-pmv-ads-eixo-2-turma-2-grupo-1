@@ -2,30 +2,80 @@
 
 <span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>
 
-Apresente os cenários de testes utilizados na realização dos testes da sua aplicação. Escolha cenários de testes que demonstrem os requisitos sendo satisfeitos.
+### **CT01 – Cadastrar Perfil**
+- **Objetivo:** Verificar se o usuário consegue criar uma conta.
+- **Passos:**  
+  Acessar site → Clicar em "Criar Conta" → Preencher dados → Aceitar termos → Registrar.
+- **Critério de Êxito:** Conta criada com confirmação.
 
-Não deixe de enumerar os casos de teste de forma sequencial e de garantir que o(s) requisito(s) associado(s) a cada um deles está(ão) correto(s) - de acordo com o que foi definido na seção "2 - Especificação do Projeto". 
+---
 
-Por exemplo:
- 
-| **Caso de Teste** 	| **CT01 – Cadastrar perfil** 	|
-|:---:	|:---:	|
-|	Requisito Associado 	| RF-00X - A aplicação deve apresentar, na página principal, a funcionalidade de cadastro de usuários para que esses consigam criar e gerenciar seu perfil. |
-| Objetivo do Teste 	| Verificar se o usuário consegue se cadastrar na aplicação. |
-| Passos 	| - Acessar o navegador <br> - Informar o endereço do site https://adota-pet.herokuapp.com/src/index.html<br> - Clicar em "Criar conta" <br> - Preencher os campos obrigatórios (e-mail, nome, sobrenome, celular, CPF, senha, confirmação de senha) <br> - Aceitar os termos de uso <br> - Clicar em "Registrar" |
-|Critério de Êxito | - O cadastro foi realizado com sucesso. |
-|  	|  	|
-| Caso de Teste 	| CT02 – Efetuar login	|
-|Requisito Associado | RF-00Y	- A aplicação deve possuir opção de fazer login, sendo o login o endereço de e-mail. |
-| Objetivo do Teste 	| Verificar se o usuário consegue realizar login. |
-| Passos 	| - Acessar o navegador <br> - Informar o endereço do site https://adota-pet.herokuapp.com/src/index.html<br> - Clicar no botão "Entrar" <br> - Preencher o campo de e-mail <br> - Preencher o campo da senha <br> - Clicar em "Login" |
-|Critério de Êxito | - O login foi realizado com sucesso. |
+### **CT02 – Registrar Denúncia Identificada**
+- **Objetivo:** Garantir que o usuário autenticado consiga registrar uma denúncia.
+- **Passos:**  
+  Login → Acessar "Registrar Denúncia" → Preencher descrição → Inserir anexos (opcional) → Enviar.
+- **Critério de Êxito:** Denúncia registrada com número de protocolo.
 
- 
-> **Links Úteis**:
-> - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Práticas e Técnicas de Testes Ágeis](http://assiste.serpro.gov.br/serproagil/Apresenta/slides.pdf)
-> -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
-> - [Criação e Geração de Planos de Teste de Software](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
+---
+
+### **CT03 – Inclusão de Localização na Denúncia**
+- **Objetivo:** Confirmar que o usuário consiga informar local da ocorrência.
+- **Passos:**  
+  Login → "Registrar Denúncia" → Informar descrição → Adicionar localização → Enviar.
+- **Critério de Êxito:** Denúncia registrada com endereço armazenado corretamente.
+
+---
+
+### **CT04 – Preenchimento de Campos Obrigatórios**
+- **Objetivo:** Verificar se o sistema impede envio de denúncia sem dados essenciais.
+- **Passos:**  
+  Acessar "Registrar Denúncia" → Tentar enviar sem preencher descrição.
+- **Critério de Êxito:** Sistema bloqueia envio e exibe alerta sobre campo obrigatório.
+---
+
+### **CT05 – Consultar Status da Denúncia**
+- **Objetivo:** Validar se o usuário consegue acompanhar suas denúncias.
+- **Passos:**  
+  Login → Acessar "Minhas Denúncias" → Selecionar denúncia → Visualizar status.
+- **Critério de Êxito:** Status exibido corretamente
+---
+
+### **CT06 – Registrar Denúncia Anônima**
+- **Objetivo:** Validar o envio de denúncia sem identificação do usuário.
+- **Passos:**  
+  Acessar "Registrar Denúncia" sem login → Preencher descrição → Anexar arquivos (opcional) → Enviar.
+- **Critério de Êxito:** Denúncia aceita e protocolo gerado sem vinculação de usuário.
+
+---
+
+### **CT07 – Excluir Denúncia Antes da Análise**
+- **Objetivo:** Garantir que o usuário possa cancelar denúncia antes de ser analisada.
+- **Passos:**  
+  Login → "Minhas Denúncias" → Selecionar denúncia pendente → Cancelar → Confirmar.
+- **Critério de Êxito:** Denúncia cancelada e status atualizado para "Cancelada pelo Usuário".
+
+---
+
+### **CT08 – Filtrar Denúncias por Status**
+- **Objetivo:** Validar que o sistema exiba corretamente denúncias conforme filtros aplicados.
+- **Passos:**  
+  Login administrador → "Painel de Denúncias" → Selecionar filtro (ex: “Em análise”) → Aplicar.
+- **Critério de Êxito:** Lista exibida apenas com denúncias do status selecionado.
+
+---
+
+### **CT09 – Redefinir Senha por E-mail**
+- **Objetivo:** Verificar se o usuário consegue redefinir senha por e-mail.
+- **Passos:**  
+  Login → "Esqueci minha senha" → Informar e-mail → Acessar link → Nova senha.
+- **Critério de Êxito:** Senha redefinida com sucesso.
+
+---
+
+### **CT10 – Denúncia com Palavras Proibidas (Filtro de Conteúdo)**
+- **Objetivo:** Verificar se o sistema identifica e bloqueia palavras ofensivas/inadequadas.
+- **Passos:**  
+  Login → "Registrar Denúncia" → Inserir descrição com palavras proibidas → Enviar.
+- **Critério de Êxito:** Sistema rejeita envio e exibe mensagem de alerta.
+
+---
