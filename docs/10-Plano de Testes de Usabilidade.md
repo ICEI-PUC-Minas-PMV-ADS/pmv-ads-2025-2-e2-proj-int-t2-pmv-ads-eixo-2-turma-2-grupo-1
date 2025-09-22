@@ -1,8 +1,6 @@
 # Plano de Testes de Usabilidade
 
-# 📋 Plano de Testes de Usabilidade - Sistema de Denúncias
-
-## 🎯 Objetivos
+##  Objetivos
 - Verificar se os usuários conseguem registrar e acompanhar denúncias sem dificuldades.  
 - Identificar barreiras na navegação e interação com o sistema.  
 - Avaliar a eficiência e a satisfação do usuário ao utilizar a interface.  
@@ -11,7 +9,7 @@
 
 ---
 
-## 🧪 Métodos de Avaliação
+##  Métodos de Avaliação
 - **Observação direta**: Acompanhar o usuário durante a execução das tarefas.  
 - **Think Aloud**: Solicitar que o usuário verbalize seus pensamentos enquanto realiza as ações.  
 - **Questionário SUS (System Usability Scale)**: Para medir a satisfação após os testes.  
@@ -20,7 +18,7 @@
 
 ---
 
-## 👥 Seleção dos Participantes
+##  Seleção dos Participantes
 
 ### 1. Perfil dos Participantes
 - **Cidadão Denunciante**  
@@ -54,20 +52,20 @@
 
 ---
 
-## 💻 Ambiente de Teste
+##  Ambiente de Teste
 - Plataforma web em ambiente de homologação  
 - Navegadores: Google Chrome e Firefox  
 - Conexão estável de internet  
 
 ---
 
-## ✅ Pré-requisitos
+##  Pré-requisitos
 - Disponibilidade para participar de uma sessão de até 60 minutos.  
 - Assinatura de termo de consentimento (em caso de gravação ou coleta de feedback estruturado).  
 
 ---
 
-## 📚 Cenários de Testes
+##  Cenários de Testes
 
 ### Cenário 1 – Cadastro de Usuário
 - **Objetivo**: Avaliar a clareza e facilidade do processo de cadastro.  
