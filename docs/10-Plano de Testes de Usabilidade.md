@@ -1,71 +1,209 @@
 # Plano de Testes de Usabilidade
 
-Os testes de usabilidade permitem avaliar a qualidade da interface com o usuário da aplicação interativa.
+Objetivos
 
-Um plano de teste de usabilidade deverá conter: 
+Verificar se os usuários conseguem registrar e acompanhar denúncias sem dificuldades.
 
-## Definição do(s) objetivo(s)
+Identificar barreiras na navegação e interação com o sistema.
 
-Antes de iniciar os testes, é essencial definir o que se deseja avaliar na usabilidade do sistema. 
-Alguns exemplos de objetivos são:
-- Verificar se os usuários conseguem concluir tarefas essenciais sem dificuldades.
-- Identificar barreiras na navegação e interação com o sistema.
-- Avaliar a eficiência e a satisfação do usuário ao utilizar a interface.
-- Testar a acessibilidade para diferentes perfis de usuários.
+Avaliar a eficiência e satisfação dos usuários com a interface.
 
-## Seleção dos participantes
+Testar a acessibilidade para diferentes perfis de usuários (cidadão, denunciante anônimo, administrador, analista responsável).
 
-Para garantir que o teste reflita o uso real do sistema, escolha participantes representativos do público-alvo.
+Coletar insights para aprimorar a experiência do usuário com base em observações reais.
 
-**Critérios para selecionar participantes:**
-- Perfis variados (experientes e iniciantes no sistema).
-- Diferentes níveis de familiaridade com tecnologia.
-- Pessoas com necessidades especiais (se aplicável).
+Métodos de Avaliação
 
-**Quantidade recomendada:**
-Mínimo: 5 participantes.
-Ideal: Entre 8 e 12 para maior diversidade.
+Observação direta: acompanhar o usuário durante a execução das tarefas.
 
-## Definição de cenários de teste
+Think Aloud: solicitar que o usuário verbalize seus pensamentos ao interagir com o sistema.
 
-Os cenários representam tarefas reais que os usuários executam no sistema. Neste projeto, cada grupo deverá definir, no mínimo, **CINCO cenários para a aplicação** e cada cenário deve incluir:
+Questionário SUS (System Usability Scale): medir satisfação após os testes.
 
-- Objetivo: O que será avaliado.
-- Contexto: A situação que leva o usuário a interagir com o sistema.
-- Tarefa: A ação que o usuário deve realizar.
-- Critério de sucesso: Como determinar se a tarefa foi concluída corretamente.
+Análise de tempo de execução: cronometrar o tempo para completar cada tarefa.
 
-**Exemplo: Cenário 1**
+Taxa de sucesso: porcentagem de usuários que completaram cada tarefa com sucesso.
 
-**Objetivo:** Avaliar a facilidade e eficiência do usuário em pesquisar, adicionar um produto ao carrinho e finalizar a compra sem dificuldades.
+Seleção dos Participantes
+1. Perfis dos Participantes
 
-**Contexto:** O usuário deseja comprar um notebook para uso pessoal. Para isso, ele deverá entrar no site www.compras.com.br para buscar opções disponíveis, comparar preços, adicionar o produto ao carrinho e finalizar a compra com pagamento via cartão de crédito.
+Cidadão Identificado
+Pessoas que desejam registrar denúncias informando seus dados.
+Familiaridade básica com tecnologia.
 
-**Tarefa(s):** 
-- Acessar o site e localizar a barra de pesquisa.
-- Pesquisar por "notebook" e utilizar os filtros para refinar a busca (exemplo: marca, preço, processador).
-- Escolher um dos notebooks listados e acessar a página do produto.
-- Adicionar o produto ao carrinho.
-- Finalizar a compra, preenchendo os dados de pagamento e endereço de entrega.
-- Confirmar a transação e verificar a tela de pedido concluído.
+Denunciante Anônimo
+Usuários que desejam enviar denúncia sem se identificar.
+Podem ter baixa experiência digital.
 
-**Critério(s) de Sucesso(s):**
-- O usuário consegue encontrar e filtrar os produtos sem dificuldades.
-- O produto é adicionado ao carrinho corretamente.
-- O usuário consegue preencher as informações de pagamento e entrega sem erros.
-- A compra é finalizada com sucesso, e o usuário visualiza a confirmação do pedido.
-- Todo o processo ocorre em menos de 5 minutos, sem necessidade de assistência.
+Analista/Órgão Responsável
+Funcionários que analisam, classificam e dão andamento às denúncias.
+Experiência com sistemas administrativos.
 
-## Métodos de coleta de dados
+Administrador
+Responsável pela gestão do sistema (usuários, denúncias, permissões).
+Perfil técnico e de moderação.
 
-Os dados coletados devem ajudar a entender a experiência dos usuários e os dados podem ser coletados por observação direta incluindo métricas quantitativas (quantidade de cliques, número de erros, tempo gasto para cada tarefa etc.), métricas qualitativas (dificuldades, comentários etc.) e questionários pós-teste (A interface foi fácil de entender? Você encontrou dificuldades em alguma etapa? O que poderia ser melhorado?)
+2. Diversidade de Usuários
 
-Para cada voluntário do teste, é fundamental coletar e apresentar todos os dados/métricas previamente definidos, mas não se esqueça: atendendo à LGPD (Lei Geral de Proteção de Dados), nenhum dado sensível, que permita identificar o voluntário, deverá ser apresentado).
+Faixa etária variada (jovens, adultos, idosos).
 
-As referências abaixo irão auxiliá-lo na geração do artefato "Plano de Testes de Usabilidade".
+Diferentes níveis de escolaridade.
 
-> **Links Úteis**:
-> - [Teste De Usabilidade: O Que É e Como Fazer Passo a Passo (neilpatel.com)](https://neilpatel.com/br/blog/teste-de-usabilidade/)
-> - [Teste de usabilidade: tudo o que você precisa saber! | by Jon Vieira | Aela.io | Medium](https://medium.com/aela/teste-de-usabilidade-o-que-voc%C3%AA-precisa-saber-39a36343d9a6/)
-> - [Planejando testes de usabilidade: o que (e o que não) fazer | iMasters](https://imasters.com.br/design-ux/planejando-testes-de-usabilidade-o-que-e-o-que-nao-fazer/)
-> - [Ferramentas de Testes de Usabilidade](https://www.usability.gov/how-to-and-tools/resources/templates.html)
+Diferente grau de familiaridade com tecnologia.
+
+Pelo menos 1 participante com deficiência (visual, auditiva ou motora leve).
+
+3. Quantidade Recomendada
+
+5 a 10 usuários:
+
+3 cidadãos/denunciantes
+
+2 denunciantes anônimos
+
+2 analistas
+
+1 administrador
+
+Ambiente de Teste
+
+Plataforma web (homologação).
+
+Navegadores Google Chrome e Firefox.
+
+Conexão estável de internet.
+
+Pré-requisitos
+
+Disponibilidade para sessão de até 60 minutos.
+
+Assinatura de termo de consentimento (caso haja gravação ou coleta estruturada).
+
+Cenários de Teste
+Cenário 1 – Cadastro de Usuário
+
+Objetivo: Avaliar clareza e facilidade no cadastro.
+
+Contexto: Um cidadão deseja se cadastrar para registrar denúncias identificadas.
+
+Tarefa: Realizar cadastro como usuário.
+
+Critério de Sucesso: Mensagem de confirmação exibida e acesso liberado.
+
+Requisito Funcional: RF-001 – Permitir cadastro de usuários. (Alta prioridade)
+
+Cenário 2 – Registro de Denúncia Identificada
+
+Objetivo: Avaliar clareza do formulário e facilidade de envio.
+
+Contexto: Um usuário logado deseja registrar uma denúncia.
+
+Tarefa: Preencher descrição, anexar arquivo e enviar denúncia.
+
+Critério de Sucesso: Sistema gera protocolo e confirma registro.
+
+Requisito Funcional: RF-002 – Permitir registro de denúncias identificadas. (Alta prioridade)
+
+Cenário 3 – Registro de Denúncia Anônima
+
+Objetivo: Validar se o usuário anônimo consegue enviar denúncia sem barreiras.
+
+Contexto: Um cidadão não deseja se identificar.
+
+Tarefa: Acessar opção "Denúncia Anônima" → Preencher descrição → Enviar.
+
+Critério de Sucesso: Denúncia registrada com protocolo anônimo.
+
+Requisito Funcional: RF-003 – Permitir denúncias anônimas. (Alta prioridade)
+
+Cenário 4 – Upload de Anexo
+
+Objetivo: Avaliar facilidade em anexar arquivos (imagem, vídeo, documento).
+
+Contexto: Usuário quer adicionar evidência à denúncia.
+
+Tarefa: Enviar denúncia com foto.
+
+Critério de Sucesso: Arquivo aceito e denúncia registrada.
+
+Requisito Funcional: RF-004 – Permitir anexos em denúncias. (Média prioridade)
+
+Cenário 5 – Consulta de Status
+
+Objetivo: Verificar se o usuário encontra facilmente o status de sua denúncia.
+
+Contexto: Usuário logado deseja acompanhar andamento da denúncia.
+
+Tarefa: Acessar "Minhas Denúncias" e consultar protocolo.
+
+Critério de Sucesso: Status exibido corretamente.
+
+Requisito Funcional: RF-005 – Permitir consulta de denúncias. (Alta prioridade)
+
+Cenário 6 – Recuperar Protocolo Anônimo
+
+Objetivo: Validar se o denunciante anônimo consegue acompanhar sua denúncia.
+
+Contexto: Denunciante anônimo possui apenas número de protocolo.
+
+Tarefa: Acessar "Consultar Denúncia" → Informar protocolo → Verificar status.
+
+Critério de Sucesso: Status exibido corretamente.
+
+Requisito Funcional: RF-006 – Permitir consulta via protocolo. (Média prioridade)
+
+Cenário 7 – Análise de Denúncia (Analista)
+
+Objetivo: Avaliar se o analista consegue processar denúncias com clareza.
+
+Contexto: Analista acessa painel para analisar denúncias.
+
+Tarefa: Acessar denúncia → Registrar análise → Alterar status.
+
+Critério de Sucesso: Denúncia atualizada e salva corretamente.
+
+Requisito Funcional: RF-007 – Permitir análise e resposta. (Alta prioridade)
+
+Cenário 8 – Gestão de Usuários (Administrador)
+
+Objetivo: Avaliar facilidade do administrador em gerenciar usuários.
+
+Contexto: Administrador precisa bloquear um usuário suspeito.
+
+Tarefa: Localizar usuário → Bloquear → Confirmar ação.
+
+Critério de Sucesso: Usuário bloqueado e sem acesso ao sistema.
+
+Requisito Funcional: RF-008 – Permitir gerenciamento de usuários. (Alta prioridade)
+
+Cenário 9 – Logout
+
+Objetivo: Verificar se o logout é simples e seguro.
+
+Contexto: Usuário deseja sair do sistema.
+
+Tarefa: Clicar em "Sair" no menu.
+
+Critério de Sucesso: Sessão encerrada e redirecionamento para login.
+
+Requisito Funcional: RF-009 – Permitir logout seguro. (Média prioridade)
+
+Cenário 10 – Navegação Geral
+
+Objetivo: Avaliar se os usuários encontram facilmente as principais funções.
+
+Contexto: Novo usuário acessa a homepage.
+
+Tarefa: Localizar funcionalidades: registrar denúncia, consultar status, perfil.
+
+Critério de Sucesso: Usuário encontra funções intuitivamente.
+
+Requisito Funcional: RF-010 – Facilitar navegação pela homepage. (Alta prioridade)
+
+Critério de Sucesso Geral
+
+≥ 85% de sucesso nas tarefas de alta prioridade.
+
+≥ 80 pontos de média no SUS.
+
+Nenhuma tarefa crítica com taxa de erro superior a 20%.
