@@ -157,7 +157,7 @@
 
 ---
 
-## 📊 Critérios de Sucesso
+##  Critérios de Sucesso
 - ≥ 85% de sucesso nas tarefas de alta prioridade.  
 - ≥ 80 pontos na média geral do questionário SUS.  
 - Nenhuma tarefa crítica com taxa de erro superior a 20%.  
