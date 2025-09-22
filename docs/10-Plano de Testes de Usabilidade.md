@@ -1,6 +1,6 @@
 # Plano de Testes de Usabilidade
 
-##Objetivos
+## Objetivos
 
 -Verificar se os usuários conseguem registrar e acompanhar denúncias sem dificuldades.
 -Identificar barreiras na navegação e interação com o sistema.
@@ -8,7 +8,7 @@
 -Testar a acessibilidade para diferentes perfis de usuários (cidadão, denunciante anônimo, administrador, analista responsável).
 -Coletar insights para aprimorar a experiência do usuário com base em observações reais.
 
-##Métodos de Avaliação
+## Métodos de Avaliação
 
 Observação direta: acompanhar o usuário durante a execução das tarefas.
 
