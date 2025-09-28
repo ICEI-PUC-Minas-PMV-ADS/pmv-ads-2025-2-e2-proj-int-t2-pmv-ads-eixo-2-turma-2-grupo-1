@@ -19,15 +19,14 @@ O diagrama de fluxo apresenta de forma visual o percurso das ações dentro do s
 
 ![Exemplo de Wireframe](img/wireframe-example.png)
 
-Os wireframes são protótipos utilizados no design de interfaces para representar a estrutura de um site e o relacionamento entre suas páginas. Eles funcionam como ilustrações do layout e da disposição dos elementos essenciais da interface.
+<img width="1012" height="760" alt="image" src="https://github.com/user-attachments/assets/718f2b70-eafe-44c2-bd7c-e021d582a136" />
 
-Nesta seção, é FUNDAMENTAL indicar, para cada tela/wireframe proposto, quais requisitos do projeto estão sendo contemplados por aquela tela.
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+<img width="782" height="735" alt="image" src="https://github.com/user-attachments/assets/21cb7b09-10ec-4ed0-8bdc-d54bb772c412" />
+
+
+
+O wireframe interativo apresenta a estrutura visual do sistema, demonstrando como a interface será organizada tanto em desktop quanto em dispositivos móveis. Ele reflete a identidade visual da empresa, incluindo cores, tipografia, ícones e elementos gráficos que reforçam a percepção de segurança, confiabilidade e acessibilidade.
+
+Através do wireframe, é possível explorar o fluxo de navegação do usuário, visualizando telas de login, registro de denúncias, acompanhamento do status, suporte e o modo de emergência “Estou em Perigo”. Além disso, contempla a área administrativa, onde os administradores podem visualizar todas as denúncias registradas e atualizar seu status, definindo-as como em análise ou fechadas, garantindo o controle e a gestão eficiente das informações.
+
+Este modelo permite testar a usabilidade, garantindo que a experiência seja intuitiva e responsiva, independente do tamanho da tela ou do dispositivo utilizado.
