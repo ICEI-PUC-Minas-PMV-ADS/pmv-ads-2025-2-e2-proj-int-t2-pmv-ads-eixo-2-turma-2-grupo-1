@@ -1,77 +1,86 @@
-
 # Metodologia
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
+## Pré-requisitos
+- Documentação de Especificação
 
-Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Definições sobre os ambiente de trabalho utilizados pela  equipe para desenvolver o projeto. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).
+A metodologia de trabalho do grupo define como o problema será atacado, descrevendo os ambientes utilizados para o desenvolvimento do projeto. Abrange a gestão do código-fonte, ferramentas de colaboração e organização do time.
+
+---
 
 ## Controle de Versão
 
-A ferramenta de controle de versão adotada no projeto foi o
-[Git](https://git-scm.com/), sendo que o [Github](https://github.com)
-foi utilizado para hospedagem do repositório.
+A ferramenta de controle de versão adotada no projeto foi o **Git**, com **GitHub** utilizado para hospedagem do repositório.
 
-O projeto segue a seguinte convenção para o nome de branches:
+### Convenção de Branches
+- **main:** versão estável já testada do software  
+- **unstable:** versão já testada, porém instável  
+- **testing:** versão em testes  
+- **dev:** versão de desenvolvimento  
 
-- `main`: versão estável já testada do software
-- `unstable`: versão já testada do software, porém instável
-- `testing`: versão em testes do software
-- `dev`: versão de desenvolvimento do software
+### Gerência de Issues
+O projeto adota a seguinte convenção para etiquetas:
+- **documentation:** melhorias ou acréscimos à documentação  
+- **bug:** funcionalidade apresenta problemas  
+- **enhancement:** funcionalidade precisa ser melhorada  
+- **feature:** nova funcionalidade a ser introduzida  
 
-Quanto à gerência de issues, o projeto adota a seguinte convenção para
-etiquetas:
+### Configuração do Projeto no GitHub
+- **Commits:** realizados diariamente ou conforme finalização de tarefas específicas  
+- **Merges:** feitos após revisão de código (pull request) e aprovação de pelo menos um membro do grupo  
+- **Tags:** utilizadas para marcar versões estáveis e milestones  
+- **Branches:** seguem a convenção definida para organizar desenvolvimento, testes e releases  
 
-- `documentation`: melhorias ou acréscimos à documentação
-- `bug`: uma funcionalidade encontra-se com problemas
-- `enhancement`: uma funcionalidade precisa ser melhorada
-- `feature`: uma nova funcionalidade precisa ser introduzida
+### Links Úteis
+- [Tutorial GitHub](https://docs.github.com/en/get-started/quickstart)  
+- [Git e GitHub](https://git-scm.com/book/pt-br/v2)  
+- [Comparando fluxos de trabalho](https://docs.github.com/en/get-started/quickstart/github-flow)  
+- [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)  
+- [The gitflow workflow - in less than 5 mins](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 
-Discuta como a configuração do projeto foi feita na ferramenta de versionamento escolhida. Exponha como a gerência de tags, merges, commits e branchs é realizada. Discuta como a gerência de issues foi realizada.
-
-> **Links Úteis**:
-> - [Tutorial GitHub](https://guides.github.com/activities/hello-world/)
-> - [Git e Github](https://www.youtube.com/playlist?list=PLHz_AreHm4dm7ZULPAmadvNhH6vk9oNZA)
->  - [Comparando fluxos de trabalho](https://www.atlassian.com/br/git/tutorials/comparing-workflows)
-> - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
-> - [The gitflow workflow - in less than 5 mins](https://www.youtube.com/watch?v=1SXpE08hvGs)
+---
 
 ## Gerenciamento de Projeto
 
 ### Divisão de Papéis
 
-Apresente a divisão de papéis entre os membros do grupo.
-
-> **Links Úteis**:
-> - [11 Passos Essenciais para Implantar Scrum no seu 
-> Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+| Nome | Função |
+|------|--------|
+| Cauã Marcos da Silva | Não definido |
+| Henrique Alves Gonçalves | Não definido |
+| Henrique Gaze Rodrigues | Não definido |
+| Kerlison Luan Andrade Lopes | Não definido |
+| Maria Eduarda Cândido Alves Guerra | Não definido |
 
 ### Processo
 
-Coloque  informações sobre detalhes da implementação do Scrum seguido pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
- 
-> **Links Úteis**:
-> - [Project management, made simple](https://github.com/features/project-management/)
-> - [Sobre quadros de projeto](https://docs.github.com/pt/github/managing-your-work-on-github/about-project-boards)
-> - [Como criar Backlogs no Github](https://www.youtube.com/watch?v=RXEy6CFu9Hk)
-> - [Tutorial Slack](https://slack.com/intl/en-br/)
+O grupo segue a metodologia **Scrum**, utilizando ferramentas online para acompanhar o andamento do projeto, execução de tarefas e status de desenvolvimento.
 
-### Ferramentas
+- Criação de **Backlogs** de tarefas no GitHub Projects  
+- **Sprints** semanais para organizar entregas e prioridades  
+- **Daily meetings** para alinhamento rápido de atividades  
+- **Reuniões de revisão** ao final de cada Sprint  
 
-As ferramentas empregadas no projeto são:
+### Links Úteis
+- [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://www.scrumguides.org/)  
+- [Scrum em 9 minutos](https://www.youtube.com/watch?v=9TycLR0TqFA)  
+- [Project management, made simple](https://www.atlassian.com/software/jira)  
+- [Sobre quadros de projeto](https://docs.github.com/en/issues/organizing-your-work-with-project-boards)  
+- [Como criar Backlogs no Github](https://docs.github.com/en/issues/organizing-your-work-with-project-boards/about-project-boards)  
+- [Tutorial Slack](https://slack.com/intl/pt-br/resources)
 
-- Editor de código.
-- Ferramentas de comunicação
-- Ferramentas de desenho de tela (_wireframing_)
+---
 
-O editor de código foi escolhido porque ele possui uma integração com o
-sistema de versão. As ferramentas de comunicação utilizadas possuem
-integração semelhante e por isso foram selecionadas. Por fim, para criar
-diagramas utilizamos essa ferramenta por melhor captar as
-necessidades da nossa solução.
+## Ferramentas Utilizadas
 
-Liste quais ferramentas foram empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível.
- 
-> **Possíveis Ferramentas que auxiliarão no gerenciamento**: 
-> - [Slack](https://slack.com/)
-> - [Github](https://github.com/)
+- **Editor de Código:** Visual Studio Code (integração com GitHub)  
+- **Ferramentas de Comunicação:** Slack (para alinhamento do time e notificações)  
+- **Ferramentas de Wireframing:** Figma (para criar diagramas e telas do sistema)  
+
+### Justificativa das Escolhas
+- O editor de código foi escolhido por integrar facilmente com o sistema de versionamento Git/GitHub.  
+- As ferramentas de comunicação possuem integração direta e notificações que agilizam a coordenação do time.  
+- O Figma permite criar diagramas, protótipos e wireframes que representam melhor as necessidades do projeto.
+
+### Possíveis Ferramentas de Gerenciamento Adicional
+- **Slack**  
+- **GitHub Projects**
