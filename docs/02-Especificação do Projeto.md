@@ -49,22 +49,20 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 ### Requisitos Funcionais
 | ID    | Descrição do Requisito                                                                                                        | Prioridade |
 | ----- | ----------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| RF-01 | O sistema deve permitir que o usuário registre uma denúncia de forma anônima ou identificada.                                 | Alta       |
-| RF-02 | O sistema deve permitir que o usuário selecione o tipo de denúncia (produto, serviço, violência, estabelecimento, etc.).      | Alta       |
-| RF-03 | O sistema deve permitir que o usuário forneça uma descrição detalhada e a localização da denúncia.                            | Alta       |
-| RF-04 | O sistema deve gerar automaticamente um número de protocolo único para cada denúncia registrada.                              | Média      |
-| RF-05 | O sistema deve permitir que o usuário altere uma denúncia já registrada, desde que esteja em status "aberta" ou "em análise". | Alta       |
-| RF-06 | O sistema deve permitir que o usuário exclua uma denúncia registrada, desde que esteja em status "aberta" ou "em análise".    | Média      |
-| RF-07 | O sistema deve notificar o administrador caso haja alteração, inclusão ou exclusão de denúncia.                               | Alta       |
-| RF-08 | O sistema deve permitir que o usuário acompanhe o status da denúncia (aberta, em análise, concluída).                         | Média      |
-| RF-09 | O sistema deve permitir que administradores visualizem todas as denúncias cadastradas.                                        | Média      |
-| RF-10 | O administrador deve poder atribuir a denúncia a um setor responsável para análise ou resolução.                              | Alta       |
-| RF-11 | O sistema deve permitir que o usuário ative o compartilhamento da sua localização em tempo real durante o modo SOS.           | Alta       |
-| RF-12 | O sistema deve notificar ao administrador com prioridade quando acionar o modo “SOS”.                                         | Alta       |
-| RF-13 | O sistema deve permitir que novos usuários se cadastrem fornecendo nome, e-mail e senha.                                      | Alta       |
-| RF-14 | O sistema deve permitir a autenticação (login) de usuários e administradores através de e-mail e senha.                       | Alta       |
-| RF-15 | O sistema deve permitir que um usuário autenticado encerre sua sessão (logout).                                               | Média      |
-| RF-16 | O sistema deve possuir um método seguro para o cadastro de novos administradores (não público).                               | Alta       |
+| RF-01 | O sistema deve permitir que o usuário registre uma denúncia de forma anônima ou identificada, selecione o tipo de denúncia (produto, serviço, violência, estabelecimento, etc.).  forneça uma descrição detalhada e a localização da denúncia. | Alta       |
+| RF-02 | O sistema deve gerar automaticamente um número de protocolo único para cada denúncia registrada.                              | Média      |
+| RF-03 | O sistema deve permitir que o usuário altere uma denúncia já registrada, desde que esteja em status "aberta" ou "em análise". | Alta       |
+| RF-04 | O sistema deve permitir que o usuário exclua uma denúncia registrada, desde que esteja em status "aberta" ou "em análise".    | Média      |
+| RF-05 | O sistema deve notificar o administrador caso haja alteração, inclusão ou exclusão de denúncia.                               | Alta       |
+| RF-06 | O sistema deve permitir que o usuário acompanhe o status da denúncia (aberta, em análise, concluída).                         | Média      |
+| RF-07 | O sistema deve permitir que administradores visualizem todas as denúncias cadastradas.                                        | Média      |
+| RF-08 | O administrador deve poder atribuir a denúncia a um setor responsável para análise ou resolução.                              | Alta       |
+| RF-09 | O sistema deve permitir que o usuário ative o compartilhamento da sua localização em tempo real durante o modo SOS.           | Alta       |
+| RF-10 | O sistema deve notificar ao administrador com prioridade quando acionar o modo “SOS”.                                         | Alta       |
+| RF-11 | O sistema deve permitir que novos usuários se cadastrem fornecendo nome, e-mail e senha.                                      | Alta       |
+| RF-12 | O sistema deve permitir a autenticação (login) de usuários e administradores através de e-mail e senha.                       | Alta       |
+| RF-13 | O sistema deve permitir que um usuário autenticado encerre sua sessão (logout).                                               | Média      |
+| RF-14 | O sistema deve possuir um método seguro para o cadastro de novos administradores (não público).                               | Alta       |
 
 
 ### Requisitos não Funcionais
