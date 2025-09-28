@@ -30,3 +30,6 @@ O wireframe interativo apresenta a estrutura visual do sistema, demonstrando com
 Através do wireframe, é possível explorar o fluxo de navegação do usuário, visualizando telas de login, registro de denúncias, acompanhamento do status, suporte e o modo de emergência “Estou em Perigo”. Além disso, contempla a área administrativa, onde os administradores podem visualizar todas as denúncias registradas e atualizar seu status, definindo-as como em análise ou fechadas, garantindo o controle e a gestão eficiente das informações.
 
 Este modelo permite testar a usabilidade, garantindo que a experiência seja intuitiva e responsiva, independente do tamanho da tela ou do dispositivo utilizado.
+
+
+[Link do projeto no figma](https://www.figma.com/design/a7PbFb5Im583u44SAdOPBG/sistema_denuncia_puc?node-id=0-1&t=Y58ptVO80BwBTcaw-1)
