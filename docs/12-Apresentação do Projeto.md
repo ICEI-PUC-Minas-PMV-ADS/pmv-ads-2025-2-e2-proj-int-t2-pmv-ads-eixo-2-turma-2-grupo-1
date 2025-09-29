@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/05979904-5ac9-4de2-8703-78881bdf4f71
 # Apresentação
 
 <span style="color:red">Pré-requisitos: Todos os demais artefatos</span>
@@ -27,7 +29,11 @@ O grupo deve distribuir de forma coerente o conteúdo a ser apresentado, dentro 
 
 ## Vídeo de apresentação - Etapa 01
 
-Inclua aqui o vídeo de APRESENTAÇÃO INICIAL do projeto produzido na Etapa 01.
+
+
+https://github.com/user-attachments/assets/5dd93ab9-f658-4eaf-bb6e-21ab53425c3c
+
+
 
 ## Vídeo de apresentação - Etapa 05
 
