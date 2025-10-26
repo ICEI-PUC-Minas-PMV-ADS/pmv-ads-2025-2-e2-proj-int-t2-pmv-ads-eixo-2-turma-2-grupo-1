@@ -45,11 +45,10 @@ O projeto adota a seguinte convenção para etiquetas:
 
 | Nome | Função |
 |------|--------|
-| Cauã Marcos da Silva | Não definido |
-| Henrique Alves Gonçalves | Não definido |
-| Henrique Gaze Rodrigues | Não definido |
-| Kerlison Luan Andrade Lopes | Não definido |
-| Maria Eduarda Cândido Alves Guerra | Não definido |
+| Cauã Marcos da Silva | Desenvolvedor |
+| Henrique Alves Gonçalves | Scrum Master |
+| Henrique Gaze Rodrigues | Desenvolvedor |
+| Kerlison Luan Andrade Lopes | Product Owner |
 
 ### Processo
 
