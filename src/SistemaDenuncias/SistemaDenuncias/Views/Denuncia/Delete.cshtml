@@ -1,0 +1,36 @@
+﻿@model SistemaDenuncias.Models.Denuncia
+
+@{
+    ViewData["Title"] = "Excluir Denúncia";
+}
+
+<h2 class="text-center text-danger mb-4">Excluir Denúncia</h2>
+
+<div class="alert alert-warning text-center">
+    <strong>Tem certeza que deseja excluir esta denúncia?</strong><br />
+    Essa ação não poderá ser desfeita.
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Protocolo:</dt>
+            <dd class="col-sm-9">@Model.Protocolo</dd>
+
+            <dt class="col-sm-3">Tipo:</dt>
+            <dd class="col-sm-9">@Model.TipoDenuncia</dd>
+
+            <dt class="col-sm-3">Descrição:</dt>
+            <dd class="col-sm-9">@Model.Descricao</dd>
+
+            <dt class="col-sm-3">Data:</dt>
+            <dd class="col-sm-9">@Model.DataCriacao.ToString("dd/MM/yyyy HH:mm")</dd>
+        </dl>
+    </div>
+</div>
+
+<form asp-action="Delete" method="post" class="mt-3 text-end">
+    <input type="hidden" asp-for="Id" />
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    <button type="submit" class="btn btn-danger">Excluir</button>
+</form>

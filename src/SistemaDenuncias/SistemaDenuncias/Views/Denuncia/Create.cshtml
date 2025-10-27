@@ -1,0 +1,30 @@
+﻿@model SistemaDenuncias.Models.Denuncia
+
+@{
+    ViewData["Title"] = "Nova Denúncia";
+}
+
+<h2 class="mb-4 text-center">Registrar Nova Denúncia</h2>
+
+<form asp-action="Create" method="post">
+    <div class="mb-3">
+        <label asp-for="TipoDenuncia" class="form-label"></label>
+        <input asp-for="TipoDenuncia" class="form-control" />
+        <span asp-validation-for="TipoDenuncia" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Descricao" class="form-label"></label>
+        <textarea asp-for="Descricao" class="form-control" rows="5"></textarea>
+        <span asp-validation-for="Descricao" class="text-danger"></span>
+    </div>
+
+    <div class="text-end">
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        <button type="submit" class="btn btn-success">Registrar</button>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

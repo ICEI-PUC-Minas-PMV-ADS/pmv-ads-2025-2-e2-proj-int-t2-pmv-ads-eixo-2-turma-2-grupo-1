@@ -3,28 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|c:\\users\\alves\\documents\\estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\sistemadenuncias\\sistemadenuncias\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|solutionrelative:sistemadenuncias\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|c:\\users\\alves\\documents\\estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\sistemadenuncias\\sistemadenuncias\\controllers\\denunciascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|solutionrelative:sistemadenuncias\\controllers\\denunciascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|c:\\users\\alves\\documents\\estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\sistemadenuncias\\sistemadenuncias\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|solutionrelative:sistemadenuncias\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|c:\\users\\alves\\documents\\estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\sistemadenuncias\\sistemadenuncias\\views\\denuncia\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|solutionrelative:sistemadenuncias\\views\\denuncia\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|c:\\users\\alves\\documents\\estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\sistemadenuncias\\sistemadenuncias\\wwwroot\\css\\usuario.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|solutionrelative:sistemadenuncias\\wwwroot\\css\\usuario.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|c:\\users\\alves\\documents\\estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\sistemadenuncias\\sistemadenuncias\\views\\denuncia\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|solutionrelative:sistemadenuncias\\views\\denuncia\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|c:\\users\\alves\\documents\\estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\sistemadenuncias\\sistemadenuncias\\views\\usuario\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|solutionrelative:sistemadenuncias\\views\\usuario\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|c:\\users\\alves\\documents\\estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\sistemadenuncias\\sistemadenuncias\\views\\denuncia\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|solutionrelative:sistemadenuncias\\views\\denuncia\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|c:\\users\\alves\\documents\\estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\sistemadenuncias\\sistemadenuncias\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|solutionrelative:sistemadenuncias\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|c:\\users\\alves\\documents\\estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\sistemadenuncias\\sistemadenuncias\\views\\denuncia\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|solutionrelative:sistemadenuncias\\views\\denuncia\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|c:\\users\\alves\\documents\\estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\sistemadenuncias\\sistemadenuncias\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|solutionrelative:sistemadenuncias\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|c:\\users\\alves\\documents\\estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\sistemadenuncias\\sistemadenuncias\\views\\denuncia\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|solutionrelative:sistemadenuncias\\views\\denuncia\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|c:\\users\\alves\\documents\\estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\sistemadenuncias\\sistemadenuncias\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|solutionrelative:sistemadenuncias\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,82 +38,98 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Program.cs",
-              "RelativeDocumentMoniker": "SistemaDenuncias\\Program.cs",
-              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Program.cs",
-              "RelativeToolTip": "SistemaDenuncias\\Program.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAAC0AAAA6AAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "DenunciasController.cs",
+              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Controllers\\DenunciasController.cs",
+              "RelativeDocumentMoniker": "SistemaDenuncias\\Controllers\\DenunciasController.cs",
+              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Controllers\\DenunciasController.cs",
+              "RelativeToolTip": "SistemaDenuncias\\Controllers\\DenunciasController.cs",
+              "ViewState": "AgIAAMoAAAAAAAAAAADwvygAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T02:17:19.428Z",
+              "WhenOpened": "2025-10-27T02:39:52.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "SistemaDenuncias\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "SistemaDenuncias\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGoAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T02:16:19.496Z",
+              "DocumentIndex": 1,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Delete.cshtml",
+              "RelativeDocumentMoniker": "SistemaDenuncias\\Views\\Denuncia\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Delete.cshtml",
+              "RelativeToolTip": "SistemaDenuncias\\Views\\Denuncia\\Delete.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAQwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-27T02:38:09.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Details.cshtml",
+              "RelativeDocumentMoniker": "SistemaDenuncias\\Views\\Denuncia\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Details.cshtml",
+              "RelativeToolTip": "SistemaDenuncias\\Views\\Denuncia\\Details.cshtml",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-27T02:37:54.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Edit.cshtml",
+              "RelativeDocumentMoniker": "SistemaDenuncias\\Views\\Denuncia\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Edit.cshtml",
+              "RelativeToolTip": "SistemaDenuncias\\Views\\Denuncia\\Edit.cshtml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAIwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-27T02:37:39.347Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "SistemaDenuncias\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "SistemaDenuncias\\wwwroot\\css\\site.css",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-13T01:57:15.575Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Usuario\\Login.cshtml",
-              "RelativeDocumentMoniker": "SistemaDenuncias\\Views\\Usuario\\Login.cshtml",
-              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Usuario\\Login.cshtml",
-              "RelativeToolTip": "SistemaDenuncias\\Views\\Usuario\\Login.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAvAAAAAAAAAA==",
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Create.cshtml",
+              "RelativeDocumentMoniker": "SistemaDenuncias\\Views\\Denuncia\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Create.cshtml",
+              "RelativeToolTip": "SistemaDenuncias\\Views\\Denuncia\\Create.cshtml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-13T01:12:17.02Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "usuario.css",
-              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\wwwroot\\css\\usuario.css",
-              "RelativeDocumentMoniker": "SistemaDenuncias\\wwwroot\\css\\usuario.css",
-              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\wwwroot\\css\\usuario.css",
-              "RelativeToolTip": "SistemaDenuncias\\wwwroot\\css\\usuario.css",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAFYAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-10-13T01:04:43.056Z",
+              "WhenOpened": "2025-10-27T02:37:28.085Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "SistemaDenuncias\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "SistemaDenuncias\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACAAAAAAAAAAAAAcwCcAAAAAAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Index.cshtml",
+              "RelativeDocumentMoniker": "SistemaDenuncias\\Views\\Denuncia\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Index.cshtml",
+              "RelativeToolTip": "SistemaDenuncias\\Views\\Denuncia\\Index.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAIwEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-13T01:29:40.454Z"
+              "WhenOpened": "2025-10-27T02:37:17.314Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "SistemaDenuncias\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "SistemaDenuncias\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-27T02:37:13.59Z",
+              "EditorCaption": ""
             }
           ]
         }
