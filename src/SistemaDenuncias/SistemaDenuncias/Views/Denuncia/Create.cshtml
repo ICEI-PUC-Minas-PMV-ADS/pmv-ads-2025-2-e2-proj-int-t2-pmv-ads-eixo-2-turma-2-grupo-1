@@ -4,27 +4,93 @@
     ViewData["Title"] = "Nova Denúncia";
 }
 
-<h2 class="mb-4 text-center">Registrar Nova Denúncia</h2>
+<h1>@ViewData["Title"]</h1>
 
-<form asp-action="Create" method="post">
-    <div class="mb-3">
-        <label asp-for="TipoDenuncia" class="form-label"></label>
-        <input asp-for="TipoDenuncia" class="form-control" />
-        <span asp-validation-for="TipoDenuncia" class="text-danger"></span>
-    </div>
+<h4>Preencha os detalhes da sua denúncia</h4>
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-    <div class="mb-3">
-        <label asp-for="Descricao" class="form-label"></label>
-        <textarea asp-for="Descricao" class="form-control" rows="5"></textarea>
-        <span asp-validation-for="Descricao" class="text-danger"></span>
-    </div>
+            <div class="form-group">
+                <label asp-for="TipoDenuncia" class="control-label"></label>
+                <input asp-for="TipoDenuncia" class="form-control" />
+                <span asp-validation-for="TipoDenuncia" class="text-danger"></span>
+            </div>
 
-    <div class="text-end">
-        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
-        <button type="submit" class="btn btn-success">Registrar</button>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <textarea asp-for="Descricao" rows="5" class="form-control"></textarea>
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+
+            <!-- Seção de Endereço -->
+            <fieldset class="border p-3 my-3">
+                <legend class="w-auto px-2">Localização da denuncia</legend>
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label asp-for="Estado" class="control-label"></label>
+                        <input asp-for="Estado" class="form-control" maxlength="2" placeholder="Ex: MG" />
+                        <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label asp-for="Cidade" class="control-label"></label>
+                        <input asp-for="Cidade" class="form-control" />
+                        <span asp-validation-for="Cidade" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label asp-for="Rua" class="control-label"></label>
+                        <input asp-for="Rua" class="form-control" />
+                        <span asp-validation-for="Rua" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label asp-for="Numero" class="control-label"></label>
+                        <input asp-for="Numero" class="form-control" />
+                        <span asp-validation-for="Numero" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label asp-for="Cep" class="control-label"></label>
+                        <input asp-for="Cep" class="form-control" maxlength="9" placeholder="00000-000" />
+                        <span asp-validation-for="Cep" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label asp-for="Bairro" class="control-label"></label>
+                        <input asp-for="Bairro" class="form-control" />
+                        <span asp-validation-for="Bairro" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="Complemento" class="control-label"></label>
+                        <input asp-for="Complemento" class="form-control" />
+                        <span asp-validation-for="Complemento" class="text-danger"></span>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="DenunciaAnonima" /> @Html.DisplayNameFor(model => model.DenunciaAnonima)
+                </label>
+                <p class="text-muted"><small>Marque se você deseja que esta denúncia seja tratada anonimamente.</small></p>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Criar Denúncia" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </div>
+        </form>
     </div>
-</form>
+</div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

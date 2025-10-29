@@ -37,7 +37,7 @@ namespace SistemaDenuncias.Controllers
             return View();
         }
 
-        // POST: /Denuncia/Create (Era Criar) (Tarefa implementada por 'Henrique Alves'
+        // POST: /Denuncia/Create (Tarefa implementada por 'Henrique Alves'
         // Processa o envio do formulário de criação de denúncia
         [HttpPost]
         [ValidateAntiForgeryToken]
