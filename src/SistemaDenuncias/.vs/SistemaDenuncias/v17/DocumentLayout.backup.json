@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|c:\\users\\alves\\documents\\estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\sistemadenuncias\\sistemadenuncias\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|solutionrelative:sistemadenuncias\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|c:\\users\\alves\\documents\\estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\sistemadenuncias\\sistemadenuncias\\controllers\\denunciascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A90987B-95C9-438B-89D8-B5DD8EC20DE9}|SistemaDenuncias\\SistemaDenuncias.csproj|solutionrelative:sistemadenuncias\\controllers\\denunciascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -30,23 +34,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Delete.cshtml",
-              "RelativeDocumentMoniker": "SistemaDenuncias\\Views\\Denuncia\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Delete.cshtml",
-              "RelativeToolTip": "SistemaDenuncias\\Views\\Denuncia\\Delete.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-29T03:12:38.019Z"
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\appsettings.json",
+              "RelativeDocumentMoniker": "SistemaDenuncias\\appsettings.json",
+              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\appsettings.json",
+              "RelativeToolTip": "SistemaDenuncias\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-02T22:35:37.102Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Details.cshtml",
               "RelativeDocumentMoniker": "SistemaDenuncias\\Views\\Denuncia\\Details.cshtml",
@@ -58,7 +63,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Edit.cshtml",
               "RelativeDocumentMoniker": "SistemaDenuncias\\Views\\Denuncia\\Edit.cshtml",
@@ -71,6 +76,30 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "DenunciasController.cs",
+              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Controllers\\DenunciasController.cs",
+              "RelativeDocumentMoniker": "SistemaDenuncias\\Controllers\\DenunciasController.cs",
+              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Controllers\\DenunciasController.cs",
+              "RelativeToolTip": "SistemaDenuncias\\Controllers\\DenunciasController.cs",
+              "ViewState": "AgIAANUAAAAAAAAAAAAIwOYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-29T03:09:03.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Delete.cshtml",
+              "RelativeDocumentMoniker": "SistemaDenuncias\\Views\\Denuncia\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Delete.cshtml",
+              "RelativeToolTip": "SistemaDenuncias\\Views\\Denuncia\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-29T03:12:38.019Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Views\\Denuncia\\Create.cshtml",
               "RelativeDocumentMoniker": "SistemaDenuncias\\Views\\Denuncia\\Create.cshtml",
@@ -79,19 +108,6 @@
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-29T03:09:32.838Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DenunciasController.cs",
-              "DocumentMoniker": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Controllers\\DenunciasController.cs",
-              "RelativeDocumentMoniker": "SistemaDenuncias\\Controllers\\DenunciasController.cs",
-              "ToolTip": "C:\\Users\\Alves\\Documents\\Estudos de programa\u00E7\u00E3o\\pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1\\src\\SistemaDenuncias\\SistemaDenuncias\\Controllers\\DenunciasController.cs*",
-              "RelativeToolTip": "SistemaDenuncias\\Controllers\\DenunciasController.cs*",
-              "ViewState": "AgIAAN4AAAAAAAAAAAAIwCsAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T03:09:03.727Z",
-              "EditorCaption": ""
             }
           ]
         }
