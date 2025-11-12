@@ -1,0 +1,125 @@
+﻿@* Esta View precisa de um link para o arquivo CSS (denuncias.css) em seu _Layout.cshtml *@
+@{
+    ViewData["Title"] = "Localização de Emergência";
+    // O nome do usuário vem do ViewBag.NomeUsuario que foi setado no DenunciaController
+}
+
+<div class="localizacao-container">
+    <h1 class="text-danger mb-4"><i class="bi bi-exclamation-octagon-fill me-2"></i> Localização de Emergência</h1>
+
+    <div id="statusLocalizacao" class="alert alert-warning text-center">
+        Aguardando permissão de localização e carregando...
+    </div>
+
+    <div class="card mb-4 shadow-sm">
+        <div class="card-header bg-danger text-white">
+            Dados de Localização para <span class="fw-bold">@ViewBag.NomeUsuario</span>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4">Status:</dt>
+                <dd class="col-sm-8"><span id="displayStatus" class="status-text bg-secondary text-white">Carregando</span></dd>
+
+                <dt class="col-sm-4">Latitude:</dt>
+                <dd class="col-sm-8"><span id="latitudeDisplay">--</span></dd>
+
+                <dt class="col-sm-4">Longitude:</dt>
+                <dd class="col-sm-8"><span id="longitudeDisplay">--</span></dd>
+
+                <dt class="col-sm-4">Precisão (m):</dt>
+                <dd class="col-sm-8"><span id="accuracyDisplay">--</span></dd>
+
+                <dt class="col-sm-4">Última Atualização:</dt>
+                <dd class="col-sm-8"><span id="timestampDisplay">--</span></dd>
+            </dl>
+        </div>
+    </div>
+
+    <h5 class="mt-4 mb-3 border-bottom pb-2">Visualização no Mapa (Atualização a cada nova leitura)</h5>
+    <iframe id="mapaIframe" class="map-iframe" src="" allow="geolocation" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <div class="d-flex justify-content-center mt-4">
+        <a asp-action="Index" class="btn btn-secondary btn-lg">Voltar para Denúncias</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        let watchId = null; // Variável para armazenar o ID do monitoramento
+
+        function watchLocation() {
+            if (navigator.geolocation) {
+                const options = {
+                    enableHighAccuracy: true,
+                    timeout: 5000,
+                    maximumAge: 0
+                };
+
+                // watchPosition é a chave para o "tempo real", monitorando o movimento.
+                watchId = navigator.geolocation.watchPosition(success, error, options);
+                document.getElementById('statusLocalizacao').className = 'alert alert-info text-center';
+                document.getElementById('statusLocalizacao').textContent = 'Localização monitorada com sucesso. Aguardando a primeira leitura...';
+            } else {
+                displayError("Seu navegador não suporta Geolocalização.");
+            }
+        }
+
+        function success(position) {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+            const accuracy = position.coords.accuracy;
+            const timestamp = new Date(position.timestamp).toLocaleTimeString();
+
+            const statusDisplay = document.getElementById('displayStatus');
+            statusDisplay.textContent = 'TRANSMITINDO';
+            statusDisplay.className = 'status-text bg-danger text-white';
+
+            document.getElementById('latitudeDisplay').textContent = lat.toFixed(6);
+            document.getElementById('longitudeDisplay').textContent = lng.toFixed(6);
+            document.getElementById('accuracyDisplay').textContent = accuracy.toFixed(2);
+            document.getElementById('timestampDisplay').textContent = timestamp;
+
+            const mapIframe = document.getElementById('mapaIframe');
+            // 'z=16' é o nível de zoom
+            mapIframe.src = `https://maps.google.com/maps?q=${lat},${lng}&z=16&output=embed`;
+
+            document.getElementById('statusLocalizacao').className = 'alert alert-success text-center';
+            document.getElementById('statusLocalizacao').textContent = `Localização ATUALIZADA às ${timestamp}.`;
+        }
+
+        function error(err) {
+            let msg = '';
+            switch (err.code) {
+                case err.PERMISSION_DENIED:
+                    msg = "Permissão negada. Por favor, habilite a localização.";
+                    break;
+                case err.POSITION_UNAVAILABLE:
+                    msg = "Informação de localização indisponível no momento.";
+                    break;
+                case err.TIMEOUT:
+                    msg = "Tempo limite excedido para obter a localização.";
+                    break;
+                default:
+                    msg = `Erro desconhecido: ${err.message}`;
+            }
+            displayError(msg);
+        }
+
+        function displayError(message) {
+            document.getElementById('statusLocalizacao').className = 'alert alert-danger text-center';
+            document.getElementById('statusLocalizacao').textContent = `ERRO: ${message}`;
+            document.getElementById('displayStatus').textContent = 'FALHA';
+            document.getElementById('displayStatus').className = 'status-text bg-danger text-white';
+        }
+
+        // Para parar o monitoramento quando o usuário sair da página, liberando recursos
+        window.onbeforeunload = function() {
+            if (watchId !== null) {
+                navigator.geolocation.clearWatch(watchId);
+            }
+        };
+
+        // Inicia o processo quando a página é carregada
+        document.addEventListener('DOMContentLoaded', watchLocation);
+    </script>
+}

@@ -4,66 +4,91 @@
     ViewData["Title"] = "Minhas Denúncias";
 }
 
-<h2 class="mb-4 text-center">Minhas Denúncias</h2>
+<h2 class="mb-5 text-center text-primary">Minhas Denúncias Registradas</h2>
 
 @if (TempData["Sucesso"] != null)
 {
-    <div class="alert alert-success">@TempData["Sucesso"]</div>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["Sucesso"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 }
 @if (TempData["Erro"] != null)
 {
-    <div class="alert alert-danger">@TempData["Erro"]</div>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        @TempData["Erro"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 }
 
-<div class="mb-3 text-end">
-    <a asp-action="Create" class="btn btn-primary">Nova Denúncia</a>
-</div>
+<div class="mb-4 d-flex justify-content-between align-items-center">
 
-<table class="table table-striped table-hover">
-    <thead>
-        <tr>
-            <th>Protocolo</th>
-            <th>Tipo</th>
-            <th>Data</th>
-            <th>Status</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Protocolo</td>
-                <td>@item.TipoDenuncia</td>
-                <td>@item.DataCriacao.ToString("dd/MM/yyyy HH:mm")</td>
-                <td>
-                    @switch (item.Status)
-                    {
-                        case SistemaDenuncias.Models.StatusDenuncia.Aberta:
-                            <span class="badge bg-warning text-dark">Aberta</span>
-                            break;
-                        case SistemaDenuncias.Models.StatusDenuncia.Analise:
-                            <span class="badge bg-info text-dark">Em Análise</span>
-                            break;
-                        case SistemaDenuncias.Models.StatusDenuncia.Fechada:
-                            <span class="badge bg-success">Fechada</span>
-                            break;
-                    }
-                </td>
-                <td class="text-end">
-                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Detalhes</a>
-                    @if (item.Status != SistemaDenuncias.Models.StatusDenuncia.Fechada)
-                    {
-                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">Editar</a>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Excluir</a>
-                    }
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+    @* BOTÃO DE EMERGÊNCIA - NOVO CÓDIGO *@
+    <button id="btnEmergencia" class="btn btn-danger btn-lg shadow-lg" style="animation: pulse 1.5s infinite;">
+        <i class="bi bi-geo-alt-fill me-2"></i> **EMERGÊNCIA! (Compartilhar Localização)**
+    </button>
+    @* FIM DO NOVO CÓDIGO *@
+
+    <a asp-action="Create" class="btn btn-primary btn-lg shadow-sm">
+        <i class="bi bi-plus-circle-fill me-2"></i> Registrar Nova Denúncia
+    </a>
+</div>
 
 @if (!Model.Any())
 {
-    <div class="alert alert-info text-center">Você ainda não possui denúncias registradas.</div>
+    <div class="alert alert-info text-center mt-5 p-4 border-info">
+        <h4 class="alert-heading">Nenhuma Denúncia!</h4>
+        <p>Você ainda não possui denúncias registradas no sistema.</p>
+        <hr>
+        <p class="mb-0">Clique em "Nova Denúncia" ou use o botão de EMERGÊNCIA se precisar de ajuda imediata.</p>
+    </div>
+}
+else
+{
+    <div class="denuncia-grid">
+        @foreach (var item in Model)
+        {
+            <div class="denuncia-card @("status-" + item.Status)">
+                <div class="card-body">
+                    <span class="card-protocolo mb-3">@item.Protocolo</span>
+
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+                        <h5 class="card-title-denuncia text-truncate">@item.TipoDenuncia</h5>
+                        <span class="badge p-2
+                                      @(item.Status == SistemaDenuncias.Models.StatusDenuncia.Aberta ? "bg-warning text-dark" :
+                                                              item.Status == SistemaDenuncias.Models.StatusDenuncia.Analise ? "bg-info text-white" :
+                                                              "bg-success text-white")">
+                    @(item.Status == SistemaDenuncias.Models.StatusDenuncia.Analise ? "Em Análise" : item.Status.ToString())
+                </span>
+            </div>
+
+                    <div class="card-meta-info">
+                        <p class="mb-1"><i class="bi bi-calendar"></i> Data: @item.DataCriacao.ToString("dd/MM/yyyy HH:mm")</p>
+                        <p class="mb-0"><i class="bi bi-geo-alt"></i> Local: @item.Cidade - @item.Estado</p>
+                    </div>
+
+                    <div class="card-actions d-flex justify-content-end gap-2">
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Detalhes</a>
+                @if (item.Status != SistemaDenuncias.Models.StatusDenuncia.Fechada)
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">Editar</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Excluir</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+
+@section Scripts {
+    <script>
+        document.getElementById('btnEmergencia').addEventListener('click', function () {
+            const confirmacao = confirm("ATENÇÃO: Você está em perigo? Ao confirmar, você concorda em compartilhar sua localização geográfica em tempo real para fins de emergência.");
+
+            if (confirmacao) {
+                window.location.href = '@Url.Action("LocalizacaoEmTempoReal", "Denuncia")';
+            }
+        });
+    </script>
 }

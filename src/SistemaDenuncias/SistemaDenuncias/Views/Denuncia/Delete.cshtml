@@ -4,18 +4,22 @@
     ViewData["Title"] = "Excluir Denúncia: " + Model.Protocolo;
 }
 
-<h1>Excluir Denúncia</h1>
+<h1 class="text-danger">Excluir Denúncia</h1>
 
-<h3 class="text-danger">Tem certeza que deseja excluir esta denúncia? Esta ação não pode ser desfeita.</h3>
+<div class="alert alert-danger p-4 shadow-sm" role="alert">
+    <h4 class="alert-heading"><i class="bi bi-exclamation-triangle-fill me-2"></i> Atenção!</h4>
+    <p class="mb-0">Tem certeza que deseja excluir a denúncia de **Protocolo @Html.DisplayFor(model => model.Protocolo)**? Esta ação é irreversível.</p>
+</div>
+
 <hr />
 
-<div class="card shadow-sm mb-4">
+<div class="card shadow-lg mb-4 border-danger">
     <div class="card-header bg-danger text-white">
-        <h5>Confirmação de Exclusão - Protocolo: @Html.DisplayFor(model => model.Protocolo)</h5>
+        <h5>Detalhes para Confirmação de Exclusão</h5>
     </div>
     <div class="card-body">
 
-        <dl class="row">
+        <dl class="row details-dl">
             <dt class="col-sm-3">
                 @Html.DisplayNameFor(model => model.TipoDenuncia)
             </dt>
@@ -27,8 +31,8 @@
                 @Html.DisplayNameFor(model => model.Status)
             </dt>
             <dd class="col-sm-9">
-                <span class="badge
-                      @(Model.Status == SistemaDenuncias.Models.StatusDenuncia.Aberta ? "bg-success" : "bg-warning text-dark")">
+                <span class="badge p-2
+                      @(Model.Status == SistemaDenuncias.Models.StatusDenuncia.Aberta ? "bg-warning text-dark" : "bg-info text-white")">
                     @Html.DisplayFor(model => model.Status)
                 </span>
             </dd>
@@ -44,7 +48,9 @@
                 @Html.DisplayNameFor(model => model.Descricao)
             </dt>
             <dd class="col-sm-9">
-                @Html.DisplayFor(model => model.Descricao)
+                <p class="details-description">
+                    @Html.DisplayFor(model => model.Descricao)
+                </p>
             </dd>
 
             <dt class="col-sm-3">
@@ -56,10 +62,12 @@
             </dd>
         </dl>
 
-        <form asp-action="Delete">
+        <hr class="mt-4" />
+
+        <form asp-action="Delete" class="d-flex justify-content-end gap-2">
             <input type="hidden" asp-for="Id" />
-            <input type="submit" value="Confirmar Exclusão" class="btn btn-danger" />
-            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            <a asp-action="Index" class="btn btn-secondary btn-lg">Cancelar</a>
+            <input type="submit" value="Confirmar Exclusão" class="btn btn-danger btn-lg" />
         </form>
     </div>
 </div>

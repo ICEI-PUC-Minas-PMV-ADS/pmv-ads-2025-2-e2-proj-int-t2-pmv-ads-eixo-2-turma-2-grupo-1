@@ -1,0 +1,187 @@
+﻿/* Variáveis de Cores e Tipografia (Melhor Prática) */
+:root {
+    --primary-color: #007bff;
+    --primary-dark: #0056b3;
+    --text-dark: #343a40;
+    --text-muted: #6c757d;
+    --bg-light: #f8f9fa;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 16px rgba(0, 0, 0, 0.15);
+    --radius-default: 0.6rem;
+}
+
+/* Estilos Gerais para a Página de Denúncias */
+body {
+    background-color: #f4f7f9;
+}
+
+h1 {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 2.25rem;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+h2.text-primary {
+    color: var(--text-dark) !important;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+/* Estilização para a lista (Index) */
+.denuncia-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.denuncia-card {
+    background-color: white;
+    border: 1px solid #e9ecef;
+    border-left: 6px solid;
+    border-radius: var(--radius-default);
+    box-shadow: var(--shadow-light);
+    transition: all 0.3s ease-in-out;
+}
+
+    .denuncia-card:hover {
+        box-shadow: var(--shadow-hover);
+        transform: translateY(-5px);
+    }
+
+/* Cores das bordas baseadas no Status */
+.status-Aberta {
+    border-left-color: #ffc107; /* Warning */
+}
+
+.status-Analise {
+    border-left-color: #17a2b8; /* Info */
+}
+
+.status-Fechada {
+    border-left-color: #28a745; /* Success */
+}
+
+.card-protocolo {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background-color: #e9ecef;
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.35rem;
+    display: inline-block;
+}
+
+.card-title-denuncia {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.75rem;
+}
+
+.card-meta-info {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    padding-top: 0.5rem;
+}
+
+    .card-meta-info i {
+        margin-right: 0.4rem;
+        color: var(--primary-color);
+    }
+
+.card-actions {
+    border-top: 1px solid #e9ecef;
+    padding-top: 1.25rem;
+    margin-top: 1rem;
+}
+
+/* Estilização para formulários (Create/Edit) */
+.fieldset-custom {
+    border: 1px solid #dee2e6;
+    border-radius: var(--radius-default);
+    padding: 2rem !important;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+    .fieldset-custom legend {
+        width: auto;
+        padding: 0 1rem;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        border-bottom: none;
+    }
+
+/* Estilização para Detalhes (Details) */
+.details-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--radius-default) var(--radius-default) 0 0;
+    padding: 1.25rem 1.5rem !important;
+}
+
+.details-description {
+    background-color: var(--bg-light);
+    border-left: 5px solid var(--primary-color);
+    padding: 1.25rem;
+    border-radius: 0.25rem;
+    white-space: pre-wrap;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.details-dl dt {
+    font-weight: 600;
+    color: var(--text-dark);
+    padding-top: 0.5rem;
+}
+
+.details-dl dd {
+    margin-bottom: 1rem;
+}
+
+/* Estilização para LocalizacaoEmTempoReal */
+.localizacao-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.map-iframe {
+    width: 100%;
+    height: 500px;
+    border: 2px solid #e9ecef;
+    border-radius: var(--radius-default);
+    margin-top: 1rem;
+}
+
+.status-text {
+    font-weight: 700;
+    padding: 0.6rem 1.25rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+/* Animação para o botão de emergência */
+@@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.6);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(220, 53, 69, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+    }
+}
