@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="login-page d-flex align-items-center justify-content-center">
+    <div class="card login-card shadow-lg">
+        <div class="card-top-bar"></div>
+        <div class="card-body p-4">
+            <h5 class="text-center fw-bold mb-4">REALIZE SEU LOGIN</h5>
+
+            <form method="post" class="px-2">
+                <div class="mb-3">
+                    <label for="email" class="form-label small text-uppercase fw-bold">E-MAIL DO USUÁRIO:</label>
+                    <input type="email" class="form-control form-control-lg" id="email" name="email" value="@ViewBag.Email" required />
+                </div>
+                <div class="mb-3">
+                    <label for="senha" class="form-label small text-uppercase fw-bold">SENHA:</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control form-control-lg" id="senha" name="senha" required />
+                        <button type="button" class="btn btn-outline-secondary" id="toggleSenha" title="Mostrar senha">👁️</button>
+                    </div>
+                </div>
+
+                @if(ViewBag.Error != null) {
+                    <div class="alert alert-danger">@ViewBag.Error</div>
+                }
+
+                <div class="d-grid gap-2 mt-3">
+                    <button type="submit" class="btn btn-success btn-lg">Acessar</button>
+                    
+                </div>
+
+                <div class="text-center mt-3">
+                    <a href="#" class="text-decoration-none small">Esqueci minha senha</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById('toggleSenha').addEventListener('click', function(){
+            var s = document.getElementById('senha');
+            if (s.type === 'password') { s.type = 'text'; this.textContent = '🙈'; }
+            else { s.type = 'password'; this.textContent = '👁️'; }
+        });
+    </script>
+}

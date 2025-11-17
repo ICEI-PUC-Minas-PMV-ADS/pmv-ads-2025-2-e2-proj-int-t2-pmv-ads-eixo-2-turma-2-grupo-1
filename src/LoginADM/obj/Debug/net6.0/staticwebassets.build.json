@@ -1,0 +1,228 @@
+{
+  "Version": 1,
+  "Hash": "kCVeWK3PXMdjYb/9f9+HJW0s2jckUw06C6Xjw3FDc7Q=",
+  "Source": "ProtecSysLoginMVC",
+  "BasePath": "_content/ProtecSysLoginMVC",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ProtecSysLoginMVC\\wwwroot",
+      "Source": "ProtecSysLoginMVC",
+      "ContentRoot": "C:\\Users\\kerli\\Downloads\\ProtecSysLoginMVC_Exact\\wwwroot\\",
+      "BasePath": "_content/ProtecSysLoginMVC",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\kerli\\Downloads\\ProtecSysLoginMVC_Exact\\wwwroot\\css\\login.css",
+      "SourceId": "ProtecSysLoginMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kerli\\Downloads\\ProtecSysLoginMVC_Exact\\wwwroot\\",
+      "BasePath": "_content/ProtecSysLoginMVC",
+      "RelativePath": "css/login#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qnedshwpho",
+      "Integrity": "dktTnMmefMx6oUiNdkkNQPUq94ipLHYZk7Z6r+qBkX8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\login.css"
+    },
+    {
+      "Identity": "C:\\Users\\kerli\\Downloads\\ProtecSysLoginMVC_Exact\\wwwroot\\img\\logo.png",
+      "SourceId": "ProtecSysLoginMVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\kerli\\Downloads\\ProtecSysLoginMVC_Exact\\wwwroot\\",
+      "BasePath": "_content/ProtecSysLoginMVC",
+      "RelativePath": "img/logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kwpqxlnz1j",
+      "Integrity": "XJWVGmtYNUbwFFoUxj7nEtIs//mGj8spX2Ijkn5T/PI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo.png"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "css/login.css",
+      "AssetFile": "C:\\Users\\kerli\\Downloads\\ProtecSysLoginMVC_Exact\\wwwroot\\css\\login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "528"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dktTnMmefMx6oUiNdkkNQPUq94ipLHYZk7Z6r+qBkX8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 19:25:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dktTnMmefMx6oUiNdkkNQPUq94ipLHYZk7Z6r+qBkX8="
+        }
+      ]
+    },
+    {
+      "Route": "css/login.qnedshwpho.css",
+      "AssetFile": "C:\\Users\\kerli\\Downloads\\ProtecSysLoginMVC_Exact\\wwwroot\\css\\login.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "528"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dktTnMmefMx6oUiNdkkNQPUq94ipLHYZk7Z6r+qBkX8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 12 Nov 2025 19:25:42 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qnedshwpho"
+        },
+        {
+          "Name": "label",
+          "Value": "css/login.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dktTnMmefMx6oUiNdkkNQPUq94ipLHYZk7Z6r+qBkX8="
+        }
+      ]
+    },
+    {
+      "Route": "img/logo.kwpqxlnz1j.png",
+      "AssetFile": "C:\\Users\\kerli\\Downloads\\ProtecSysLoginMVC_Exact\\wwwroot\\img\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2320"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XJWVGmtYNUbwFFoUxj7nEtIs//mGj8spX2Ijkn5T/PI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Nov 2025 17:26:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kwpqxlnz1j"
+        },
+        {
+          "Name": "label",
+          "Value": "img/logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XJWVGmtYNUbwFFoUxj7nEtIs//mGj8spX2Ijkn5T/PI="
+        }
+      ]
+    },
+    {
+      "Route": "img/logo.png",
+      "AssetFile": "C:\\Users\\kerli\\Downloads\\ProtecSysLoginMVC_Exact\\wwwroot\\img\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2320"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XJWVGmtYNUbwFFoUxj7nEtIs//mGj8spX2Ijkn5T/PI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Nov 2025 17:26:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XJWVGmtYNUbwFFoUxj7nEtIs//mGj8spX2Ijkn5T/PI="
+        }
+      ]
+    }
+  ]
+}
