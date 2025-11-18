@@ -13,41 +13,41 @@ O registro de testes de usabilidade é um documento ou planilha onde são coleta
 
 Para registrar os indicadores de cada cenário, é preciso manter a coerência com os critérios quantitativos e qualitativos que foram definidos no plano de testes de usabilidade.
 
-**Cenário 1**: O usuário deseja comprar um notebook para uso pessoal. Para isso, ele deverá entrar no site www.compras.com.br para buscar opções disponíveis, comparar preços, adicionar o produto ao carrinho e finalizar a compra com pagamento via cartão de crédito.         
+**Cenário 1**: Cadastro de Usuário         
 | **Usuário**   | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos** | **Feedback do Usuário** |
 |-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
-| Usuário 1    |                    |                                 |                 |                        |                              |                     |      
-| Usuário 2    |                    |                                 |                 |                        |                              |                     |      
-| Usuário 3    |                    |                                 |                 |                        |                              |                     |  
-| Usuário 4    |                    |                                 |                 |                        |                              |                     | 
-| Usuário 5    |                    |                                 |                 |                        |                              |                     | 
+| Usuário 1    |         85           |             9                    |     Sim            |         Nenhum               |        "O processo é rápido"                      |                     |      
+| Usuário 2    |         48           |             7                   |      Sim           |        Nenhum                |       "Achei bonito o aplicativo, bem intuitivo."                       |                     |      
+| Usuário 3    |         121           |            11                   |      Sim           |      1 (Campo vazio)        |        "Deveria aparecer a mensagem de erro"                      |                     |  
+| Usuário 4    |         50           |              8                   |       Sim          |       Nenhum                 |        "Muito fácil e intuitivo. Amei a experiência"                      |                     | 
+| Usuário 5    |         60           |              19                   |       Sim          |       Nenhum                 |      "O fluxo é claro."                        |                     | 
 
-**Cenário 2**:         
+**Cenário 2**: Registro de Denúncia        
 | **Usuário**  | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos** | **Feedback do Usuário** |
 |-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
-| Usuário 1   |                    |                                 |                 |                        |                              |                     |      
-| Usuário 2   |                    |                                 |                 |                        |                              |                     |      
-| Usuário 3   |                    |                                 |                 |                        |                              |                     |  
-| Usuário 4   |                    |                                 |                 |                        |                              |                     | 
-| Usuário 5   |                    |                                 |                 |                        |                              |                     | 
+| Usuário 1   |       82             |        11                         |    Sim             |          Nenhum              |     "Rápido para cadastrar uma denúncia."                         |                     |      
+| Usuário 2   |       90             |          16                       |     Sim            |     Nenhum                   |     "Formulário direto ao ponto, sem enrolação."                         |                     |      
+| Usuário 3   |       120             |          22                       |     Não            |       1(Campo obrigatório)         |     "Não consegui entender quais campos eram obrigatórios."                         |                     |  
+| Usuário 4   |       87             |           15                      |     Sim            |    1(Campo de Descrição)                    |   "O campo de descrição estava pouco visível."                           |                     | 
+| Usuário 5   |       83             |            18                     |      Sim           |     Nenhum                   |    "Funcionalidade essencial, bem implementada."                          |                     | 
 
-**Cenário 3**:         
+**Cenário 3**:  Acompanhamento de Denúncia       
 | **Usuário**  | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos** | **Feedback do Usuário** |
 |-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
-| Usuário 1   |                    |                                 |                 |                        |                              |                     |      
-| Usuário 2   |                    |                                 |                 |                        |                              |                     |      
-| Usuário 3   |                    |                                 |                 |                        |                              |                     |  
-| Usuário 4   |                    |                                 |                 |                        |                              |                     | 
-| Usuário 5   |                    |                                 |                 |                        |                              |                     | 
+| Usuário 1   |      30              |            3                     |    Sim             |        Nenhum                |       "Fácil de encontrar a seção de denúncias"                       |                     |      
+| Usuário 2   |        65            |            7                     |     Sim            |     1(Dificuldade em achar descrição)     |     "Achei que estaria em negrito o nome 'Descrição'."                         |                     |      
+| Usuário 3   |        45            |           5                      |    Sim             |       Nenhum                 |      "Muito bom! O ícone de status (vermelho/amarelo/verde) ajuda muito na leitura rápida."                        |                     |  
+| Usuário 4   |        50            |              6                   |      Sim           |        Nenhum                |    "Sem problemas. A data da última atualização é importante e está bem destacada."                          |                     | 
+| Usuário 5   |        35            |             3                    |      Sim           |         Nenhum               |     "Perfeito. Informações diretas sobre o andamento."                         |                     | 
 
-**Cenário 4**:         
+**Cenário 4**:  Edição e Cancelamento de Denúncia       
 | **Usuário**  | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos** | **Feedback do Usuário** |
 |-------------|--------------------|---------------------------------|-----------------|------------------------|------------------------------|
-| Usuário 1   |                    |                                 |                 |                        |                              |                     |      
-| Usuário 2   |                    |                                 |                 |                        |                              |                     |      
-| Usuário 3   |                    |                                 |                 |                        |                              |                     |  
-| Usuário 4   |                    |                                 |                 |                        |                              |                     | 
-| Usuário 5   |                    |                                 |                 |                        |                              |                     | 
+| Usuário 1   |        70            |           11                      |    Sim             |    Nenhum                    |     "Fácil de achar a opção de cancelar."                         |                     |      
+| Usuário 2   |       45             |           10                      |      Sim           |      Nenhum                  |      "Editar é simples."                        |                     |      
+| Usuário 3   |       95             |         12                        |       Sim          |      1(Confirmação de exclusão)                  |     "A confirmação de exclusão é confusa."                         |                     |  
+| Usuário 4   |       55             |         15                        |       Sim          |       Nenhum                 |     "Processo claro, sem problemas."                         |                     | 
+| Usuário 5   |       60             |           17                      |       Sim          |      Nenhum                  |     "As ações de cancelar e editar são bem visíveis."                         |                     | 
 
 **Cenário 5**:         
 | **Usuário**  | **Tempo Total (seg)** | **Quantidade de cliques** | **Tarefa foi concluída?** (Sim/Não) | **Erros Cometidos** | **Feedback do Usuário** |
