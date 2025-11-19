@@ -64,7 +64,8 @@ A arquitetura da solução define como o sistema de denúncias é estruturado, d
 ## Diagrama de Classes
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
-<img width="1175" height="775" alt="image" src="https://github.com/user-attachments/assets/e83721c7-3dad-4888-88d5-7c687919c19a" />
+<img width="772" height="678" alt="image" src="https://github.com/user-attachments/assets/4150dd8d-1f87-4eab-8e19-13bcd31d5e1c" />
+
 
 
 ## Modelo ER (Projeto Conceitual)
@@ -81,7 +82,8 @@ O Modelo ER representa através de um diagrama como as entidades (coisas, objeto
 O projeto da base de dados corresponde à representação das entidades e relacionamentos identificadas no Modelo ER, no formato de tabelas, com colunas e chaves primárias/estrangeiras necessárias para representar corretamente as restrições de integridade.
  
 Para mais informações, consulte o microfundamento "Modelagem de Dados".
-<img width="1311" height="597" alt="diagrama relacional" src="https://github.com/user-attachments/assets/5518dc88-27f4-4190-a08c-d06074675deb" />
+<img width="665" height="643" alt="diagrama banco de dados" src="https://github.com/user-attachments/assets/7701f367-c0cd-4e64-b35e-934ced0f0a2e" />
+
 
 
 ## ATENÇÃO!!!
