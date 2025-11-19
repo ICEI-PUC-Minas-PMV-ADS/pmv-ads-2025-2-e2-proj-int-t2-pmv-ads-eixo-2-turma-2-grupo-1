@@ -1,29 +1,25 @@
 message: Please cite this software using these metadata.
-title:
+title: Siistemas de denuncias
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
+  - family-names: da Silva
+    given-names: Cauã Marcos
+  - family-names: Alves Gonçalves
+    given-names: Henrique
+  - family-names:  Gaze Rodrigues
+    given-names: Henrique
+  - family-names:  Andrade Lopes
+    given-names: Kerlison Luan
+  - family-names:  Cândido Alves Guerra
+    given-names: Maria Eduarda
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names:  da Costa
+    given-names: José Wilson
+
 keywords:
-  - 
-  - 
-repository-code: 
+  - Denuncia violencia
+  -  Pessoas com vulnerabilidades
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2025-2-e2-proj-int-t2-pmv-ads-eixo-2-turma-2-grupo-1
 version: 1.0.0
-date-released: 2023-10-31
+
+date-released: 2025-12-08
