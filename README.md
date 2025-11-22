@@ -23,7 +23,8 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 ## Instruções de Instalação, Execução e Acesso
 
 **Acesso rápido (produção)**
-* URL da aplicação: https://seu-dominio.com/caminho
+* URL da aplicação/Usuario: https://sistema-denuncias-ebabgchra2a3frbe.canadacentral-01.azurewebsites.net/Usuario/Login
+*  URL da aplicação/Admin: https://sistema-denuncias-ebabgchra2a3frbe.canadacentral-01.azurewebsites.net/Admin/Login
 * Status: online / instável / em manutenção (atualize conforme o caso)
 * Ambiente: produção / homologação
 
