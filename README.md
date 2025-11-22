@@ -28,9 +28,9 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 * Status: online / instável / em manutenção (atualize conforme o caso)
 * Ambiente: produção / homologação
 
-**Usuário(s) de teste (se houver):**
-* Login: usuario_teste
-* Senha: senha_teste
+**Usuário(s) Administrador*
+* Login: admin@email.com
+* Senha: 123
 
 # Documentação
 
