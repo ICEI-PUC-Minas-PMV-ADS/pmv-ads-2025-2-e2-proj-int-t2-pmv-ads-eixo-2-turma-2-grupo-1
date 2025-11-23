@@ -1,107 +1,250 @@
-# Registro de Testes de Software
+# 🧪 Registro de Testes de Software – ProtecSys
 
-# 🧪 Teste de Software – SistemaDenuncias
-
-## Caso de Teste: **CT01 – Cadastrar Perfil**
-
-### 🧾 Requisito Associado
-**RF-001** – A aplicação deve apresentar, na página principal, a funcionalidade de cadastro de usuários para que esses consigam criar e gerenciar seu perfil.
+**Versão do Documento:** `1.1`  
+**Data de Elaboração:** `2025-11-23`  
+**Sistema:** `ProtecSys — Sistema de Denúncias Corporativas`  
+**Testador(a):** `Henrique Alves`
 
 ---
 
-### 🎯 Objetivo do Teste
-Verificar se o usuário consegue criar uma conta com sucesso no sistema.
+# ✔ Matriz de Cobertura – Requisitos Funcionais × Casos de Teste
+
+| RF  | Descrição Resumida | Casos de Teste |
+|-----|--------------------|----------------|
+| RF-01 | Registrar denúncia (anônima ou identificada) | CT-03 |
+| RF-02 | Gerar protocolo único | CT-03 |
+| RF-03 | Editar denúncia aberta/em análise | CT-06 |
+| RF-04 | Excluir denúncia aberta/em análise | CT-07 |
+| RF-05 | Notificar administrador sobre alterações | CT-03, CT-06, CT-07 |
+| RF-06 | Acompanhar status da denúncia | CT-05 |
+| RF-07 | Administradores visualizam todas as denúncias | CT-05 |
+| RF-08 | Localização em tempo real no modo SOS | CT-04 |
+| RF-09 | Notificação prioritária ao admin no SOS | CT-04 |
+| RF-10 | Cadastro de usuários (nome, e-mail, senha) | CT-01 |
+| RF-11 | Autenticação de usuários e admins | CT-02 |
+| RF-12 | Logout do sistema | CT-08 |
+| RF-13 | Cadastro seguro de administradores | CT-09 |
 
 ---
 
-### 🧭 Passos para Execução
-1. Acessar o site do **SistemaDenuncias**.  
-2. Clicar no botão **“Não possuo conta”**.  
-3. Preencher os campos obrigatórios:
-   - Nome  
-   - E-mail  
-   - CPF  
-   - Telefone  
-   - Senha  
-4. Clicar em **“Cadastrar”**.  
-5. Verificar se a conta foi criada e se o usuário é redirecionado para a tela de login.
+# 📌 CT-01 – Cadastro de Novo Usuário
 
----
+**ID:** `CT-01`  
+**Requisito Associado:** `RF-10` — Cadastro de novos usuários.  
+**Objetivo:** Validar criação de conta e regras de validação.
 
-### ✅ Critério de Êxito
-A conta deve ser criada com sucesso e o usuário deve visualizar a mensagem de confirmação de cadastro.
+### Pré-condições
+- Sistema online.
+- E-mail utilizado não deve existir no sistema.
 
----
+### Passos
+1. Acessar `/Usuario/CriarConta`.  
+2. Preencher **nome, e-mail e senha**.  
+3. Confirmar cadastro.  
+4. Verificar redirecionamento.
 
-### 📸 Evidência – Tela de Cadastro
-<img width="1792" height="782" alt="01" src="https://github.com/user-attachments/assets/0f840116-88ab-422b-a93a-2beb9523d834" />
+### Cenários
 
-
-
-
----
-
-## Caso de Teste: **CT02 – Login de Usuário**
-
-### 🧾 Requisito Associado
-**RF-002** – O sistema deve permitir que usuários cadastrados realizem login informando e-mail e senha válidos.
-
----
-
-### 🎯 Objetivo do Teste
-Verificar se o usuário consegue acessar o sistema utilizando as credenciais cadastradas.
-
----
-
-### 🧭 Passos para Execução
-1. Acessar a página de login.  
-2. Inserir o **e-mail** e a **senha** cadastrados.  
-3. Clicar em **“Entrar”**.  
-4. Observar a resposta do sistema.
-
----
-
-### ⚠️ Cenários de Validação
 | Cenário | Entrada | Resultado Esperado |
-|----------|----------|--------------------|
-| 1 | Campos vazios | Exibir mensagem: “Informe o e-mail e a senha.” |
-| 2 | Senha ausente | Exibir mensagem: “Senha invalida” |
-| 3 | Credenciais incorretas | Exibir mensagem: “E-mail ou senha inválidos.” |
-| 4 | Credenciais corretas | Acessar o sistema e exibir mensagem de boas-vindas. |
+|--------|---------|--------------------|
+| Sucesso | Dados válidos | Usuário criado e redirecionado. |
+| Falha – campo vazio | Nome/e-mail/senha faltando | Mensagem de erro. |
+| E-mail existente | E-mail já registrado | "E-mail já cadastrado". |
+
+### Critério de Êxito
+Usuário criado apenas com dados válidos e únicos.
 
 ---
 
-### 📸 Evidências – Tela de Login
+# 📌 CT-02 – Autenticação de Usuário e Administrador
 
-#### 🔸 Cenário 1 – Campos Vazios
-<img width="1821" height="760" alt="02" src="https://github.com/user-attachments/assets/2ef8c4f3-9ac8-4ffd-ab5e-12027cbba929" />
+**ID:** `CT-02`  
+**Requisito Associado:** `RF-11`  
+**Objetivo:** Validar login e perfis diferentes.
 
+### Pré-condições
+- Existir usuário e administrador cadastrados.
 
-#### 🔸 Cenário 2 – Senha ausente
-<img width="1787" height="597" alt="03" src="https://github.com/user-attachments/assets/74f3e892-372b-4975-851c-629e54195f97" />
+### Passos
+1. Acessar `/Login`.  
+2. Informar credenciais.  
+3. Clicar em **Entrar**.
 
+### Cenários
 
-#### 🔸 Cenário 3 – Credenciais Inválidas
-<img width="1827" height="567" alt="04" src="https://github.com/user-attachments/assets/15c655f8-fa34-4059-bad5-64167c2aa968" />
+| Cenário | Entrada | Resultado Esperado |
+|--------|---------|--------------------|
+| Login usuário | Credenciais válidas | Redirecionar para `/Denuncia/Index`. |
+| Login admin | Credenciais válidas | Redirecionar para `/Admin/Dashboard`. |
+| Credenciais inválidas | Dados incorretos | "E-mail ou senha inválidos". |
 
+### Telas (Usuário e Admin)
 
-#### 🔸 Cenário 4 – Login Bem-sucedido
-<img width="1907" height="462" alt="05" src="https://github.com/user-attachments/assets/921b70a3-1206-49bf-b47b-0b523438f6fe" />
+#### Usuário
+<img width="1127" height="712" alt="2" src="https://github.com/user-attachments/assets/3351c0df-268d-49e4-aaf6-c96dfb48d666" />
 
+#### Admin
+<img width="1033" height="665" alt="3" src="https://github.com/user-attachments/assets/4adf163b-b329-4255-bb5d-1eb0c41124fa" />
 
 ---
 
-### ✅ Critério de Êxito
-O usuário deve conseguir acessar o sistema apenas quando as credenciais informadas forem válidas.
+# 📌 CT-03 – Registrar Nova Denúncia
+
+**ID:** `CT-03`  
+**Requisitos Associados:** `RF-01`, `RF-02`, `RF-05`  
+**Objetivo:** Verificar criação completa da denúncia.
+
+### Pré-condições
+- Usuário autenticado.
+
+### Passos
+1. Acessar `/Denuncia/Create`.  
+2. Selecionar tipo de denúncia.  
+3. Escolher **anônima** ou **identificada**.  
+4. Informar descrição e localização.  
+5. Clicar em **Criar Denúncia**.
+
+### Critério de Êxito
+- Denúncia criada com status **Aberta**.  
+- Protocolo único gerado.  
+- Notificação enviada ao admin.  
+
+### Tela
+<img width="1483" height="860" alt="4" src="https://github.com/user-attachments/assets/bc27bb8d-eece-4595-ae1b-5a4460d36a29" />
 
 ---
 
-### 📅 Data de Execução
-24/10/2025
+# 📌 CT-04 – Ativação do Modo SOS
 
-### 👨‍💻 Testador
-**Henrique Alves Gonçalves**
+**ID:** `CT-04`  
+**Requisitos Associados:** `RF-08`, `RF-09`  
+**Objetivo:** Validar localização em tempo real e alerta prioritário.
+
+### Pré-condições
+- Usuário e administrador logados.
+
+### Passos
+**Aba do Usuário:**  
+1. Acessar `/Denuncia/LocalizacaoEmTempoReal`.  
+2. Clicar em **"ATIVAR MODO PERIGO"**.
+
+**Aba do Administrador:**  
+3. acessar `/Admin/Dashboard`.  
+4. Ver contador inicial (ex.: `0`).  
+5. Ver contador após SOS (ex.: `1`).  
+
+### Critério de Êxito
+- Admin recebe notificação prioritária.  
+- Localização em tempo real exibida.  
+
+### Telas
+
+#### Usuário
+<img width="1871" height="846" alt="5" src="https://github.com/user-attachments/assets/968c4636-5058-4b84-a74a-86ca167a71e7" />
+
+#### Admin
+<img width="1877" height="803" alt="6" src="https://github.com/user-attachments/assets/01aa2937-778d-4f71-b09d-fa0ae37456b1" />
 
 ---
 
-© 2025 - SistemaDenuncias
+# 📌 CT-05 – Gerenciamento de Status da Denúncia (Admin)
+
+**ID:** `CT-05`  
+**Requisitos Associados:** `RF-06`, `RF-07`  
+**Objetivo:** Validar acompanhamento e alteração de status.
+
+### Pré-condições
+- Admin autenticado.
+- Existir denúncia criada.
+
+### Passos
+1. Acessar `/Admin/Index`.  
+2. Abrir denúncia em **Detalhes**.  
+3. Alterar status.  
+4. Salvar.
+
+### Critério de Êxito
+- Status alterado corretamente.  
+- Exibição atualizada no painel.  
+
+### Tela
+<img width="1932" height="792" alt="7" src="https://github.com/user-attachments/assets/09652245-d6f5-4520-8167-d5681269d2c6" />
+
+---
+
+# 📌 CT-06 – Editar Denúncia
+
+**ID:** `CT-06`  
+**Requisito Associado:** `RF-03`  
+**Objetivo:** Validar edição nos status permitidos.
+
+### Pré-condições
+- Denúncia **Aberta** ou **Em Análise**.
+
+### Passos
+1. Acessar `/Denuncia/Edit/{id}`.  
+2. Editar detalhes.  
+3. Salvar.
+
+### Critério de Êxito
+- Denúncia atualizada corretamente.  
+- Notificação ao admin.
+
+---
+
+# 📌 CT-07 – Excluir Denúncia
+
+**ID:** `CT-07`  
+**Requisito Associado:** `RF-04`  
+**Objetivo:** Validar regras de exclusão.
+
+### Pré-condições
+- Denúncia aberta ou em análise.
+
+### Passos
+1. Acessar `/Denuncia/Delete/{id}`.  
+2. Confirmar exclusão.
+
+### Critério de Êxito
+- Denúncia excluída.  
+- Admin notificado (RF-05).
+
+---
+
+# 📌 CT-08 – Logout
+
+**ID:** `CT-08`  
+**Requisito Associado:** `RF-12`  
+**Objetivo:** Validar encerramento de sessão.
+
+### Passos
+1. Clicar em **Logout**.  
+2. Tentar acessar uma página protegida.
+
+### Resultado Esperado
+- Sistema deve impedir acesso após logout.
+
+---
+
+# 📌 CT-09 – Cadastro Seguro de Administradores
+
+**ID:** `CT-09`  
+**Requisito Associado:** `RF-13`  
+**Objetivo:** Validar cadastro restrito de administradores.
+
+
+### Passos
+1. So pode ser cadastrado pelo membro do suporte da "ProtecSys"
+
+### Resultado Esperado
+- Administrador criado com segurança.  
+
+---
+
+# 📄 Histórico de Versões
+
+| Versão | Data | Autor | Descrição |
+|--------|-------|--------|-----------|
+| 1.0 | 2025-11-23 | Henrique Alves | Versão inicial |
+| 1.1 | 2025-11-23 | Henrique Alves | Adaptação aos RFs|
+
