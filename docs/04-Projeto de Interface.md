@@ -11,7 +11,8 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 O diagrama de fluxo apresenta de forma visual o percurso das ações dentro do sistema de denúncias. Ele demonstra como o usuário interage com a plataforma desde o acesso inicial até o registro da denúncia, incluindo as etapas de autenticação (opcional), preenchimento do formulário, envio de informações, acompanhamento do status da denúncia e, quando aplicável, a ativação do modo de emergência “Estou em Perigo”. O fluxo também contempla a comunicação segura com as autoridades e a proteção do anonimato do denunciante, garantindo confidencialidade e integridade das informações.
 
-![diagrama de fluxo](https://github.com/user-attachments/assets/aa5d38e4-b26e-47e3-b52b-c1012b26b70f)
+![Diagrama de fluxo](https://github.com/user-attachments/assets/3f4c0eda-fb3d-4268-a2bc-13a873a3fad7)
+
 
 
 
