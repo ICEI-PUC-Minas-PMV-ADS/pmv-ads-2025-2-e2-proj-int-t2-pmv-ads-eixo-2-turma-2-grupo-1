@@ -1,43 +1,62 @@
-# Programação de Funcionalidades (INCLUIR A PROGRAMAÇAÕ DE FUNCIONALIDADE EM PROFUNDIDADE)
+# 🚨 Sistema ProtecSys – Documentação Técnica Completa
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="4-Metodologia.md"> Metodologia</a>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="5-Arquitetura da Solução.md"> Arquitetura da Solução</a>
+---
 
-Nesta seção, a implementação do sistema descrita por meio dos requisitos funcionais e/ou não funcionais. Nesta seção, é essencial relacionar os requisitos atendidos com os artefatos criados (código fonte) e com o(s) responsável(is) pelo desenvolvimento de cada artefato a cada etapa. Nesta seção também deverão ser apresentadas, se necessário, as instruções para acesso e verificação da **implementação que deve estar funcional no ambiente de hospedagem, OBRIGATORIAMENTE, a partir da Etapa 03**.
+# 4. Programação de Funcionalidades
 
-**O que DEVE ser utilizado para o desenvolvimento da aplicação:**
-- Microsoft Visual Studio (IDE de Codificação)
-- HTML e CSS (frontend)
-- Javascript (frontend)
-- C# (backend)
-- MySQL ou SQLServer(Base de Dados)
-- Bootstrap (template responsivo para frontend)
-- Github (documentação e controle de versão)
+## 4.1. Introdução
 
-**O que NÃO PODE ser utilizado:**
-- Template React (e qualquer outro template - exceto o Bootstrap)
-- Qualquer outra liguagem de programação diferente de C#
+Esta seção documenta a implementação técnica completa do sistema **ProtecSys**, relacionando cada Requisito Funcional (RF) aos arquivos de código que o implementam.
 
-A tabela a seguir é um exemplo de como ela deverá ser preenchida considerando os artefatos desenvolvidos.
+A arquitetura utiliza:
 
-|ID    | Descrição do Requisito  | Artefatos produzidos | Aluno(a) responsável |
-|------|-----------------------------------------|----|----|
-|RF-001| A aplicação deve permitir que o usuário avalie uma agência de intercâmbio com base na sua experiência| |  |
-|RF-002| A aplicação deve permitir que o usuário inclua comentários ao fazer uma avaliação de uma agência de intercâmbio     |  |  |
-|RF-003| A aplicação deve permitir que o usuário consulte todas as agências de intercâmbio cadastradas ordenando-as com base em suas notas |  |  |
+- ASP.NET Core MVC (C#)  
+- Entity Framework Core  
+- SQL Server  
+- HTML5, CSS3, JavaScript, Bootstrap  
+- GitHub para versionamento  
 
+Cada funcionalidade é mapeada diretamente aos artefatos desenvolvidos.
 
-# Instruções de acesso
+---
 
-Não deixe de informar o link onde a aplicação estiver disponível para acesso (por exemplo: https://adota-pet.herokuapp.com/src/index.html).
+## 4.2. Tecnologias Utilizadas
 
-Se houver usuário de teste, o login e a senha também deverão ser informados aqui (por exemplo: usuário - admin / senha - admin).
+| Tecnologia | Propósito |
+|-----------|-----------|
+| Microsoft Visual Studio | IDE para desenvolvimento e depuração |
+| C# / ASP.NET Core MVC | Backend, APIs e regras de negócio |
+| Entity Framework Core | ORM para manipulação do banco SQL Server |
+| HTML5 / CSS3 / JavaScript | Estrutura e comportamento das interfaces |
+| Bootstrap | Layout responsivo |
+| SQL Server | Armazenamento persistente |
+| GitHub | Controle de versão e documentação |
 
-O link e o usuário/senha descritos acima são apenas exemplos de como tais informações deverão ser apresentadas.
+---
 
-> **Links Úteis**:
->
-> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> - [JSON Tutorial](https://www.w3resource.com/JSON)
-> - [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
-> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+## 4.3. Mapeamento dos Requisitos Funcionais para Artefatos
+
+| ID | Descrição | Artefatos Produzidos | Responsável |
+|----|-----------|----------------------|-------------|
+| **RF-01** | Registrar denúncia identificada ou anônima com tipo, descrição e localização | Backend: `DenunciaController.cs` (Create POST), `Denuncia.cs`.<br>Frontend: `Views/Denuncia/Create.cshtml`, `usuario-style.css`. | Henrique Alves |
+| **RF-02** | Gerar protocolo único automaticamente | Backend: `GerarProtocolo()` em `DenunciaController.cs`. | Henrique Alves |
+| **RF-03** | Alterar denúncia (status aberta/em análise) | Backend: `Edit (GET/POST)` em `DenunciaController.cs`.<br>Frontend: `Views/Denuncia/Edit.cshtml`. | Henrique Alves |
+| **RF-04** | Excluir denúncia (status aberta/em análise) | Backend: `Delete (GET)` e `DeleteConfirmed (POST)` em `DenunciaController.cs`.<br>Frontend: `Views/Denuncia/Delete.cshtml`. | Henrique Alves |
+| **RF-05** | Notificar administrador ao alterar/incluir/excluir denúncia | Backend: Métodos de notificação no `AdminController.cs`.<br>Frontend: JS no Dashboard administrativo. | Henrique Alves |
+| **RF-06** | Acompanhar status da denúncia | Backend: Enum `StatusDenuncia` em `Denuncia.cs`.<br>Frontend: `Views/Denuncia/Index.cshtml`, `Details.cshtml`. | Henrique Alves |
+| **RF-07** | Administrador visualiza todas as denúncias | Backend: `AdminController.cs` → `Index`.<br>Frontend: `Views/Admin/Index.cshtml`. | Henrique Alves |
+| **RF-08** | Administrador atribui denúncia a um setor | Backend: `AdminController.cs` → `AtualizarStatus`.<br>Frontend: `Views/Admin/GerenciarDenuncia.cshtml` + JS. | Henrique Alves |
+| **RF-09** | Ativar modo SOS com localização em tempo real | Backend: `Usuario.cs` (Latitude, Longitude, EmPerigo).<br>Frontend: `LocalizacaoEmTempoReal.cshtml` + JS. | Henrique Alves |
+| **RF-10** | Notificação prioritária ao administrador | Backend: `UsuariosEmPerigoCount`, `GetUsuariosEmPerigo` em `AdminController.cs`.<br>Frontend: Dashboard com modal e atualização via JS. | Henrique Alves |
+| **RF-11** | Cadastro de usuários | Backend: `UsuarioController.cs` → `Cadastro (POST)`.<br>Frontend: `Views/Usuario/Cadastro.cshtml`. | Henrique Alves |
+| **RF-12** | Login de usuários e administradores | Backend: `UsuarioController.cs` e `AdminController.cs` → `Login (POST)`.<br>Frontend: `Views/Usuario/Login.cshtml`, `Views/Admin/Login.cshtml`. | Kerlison Luan |
+| **RF-13** | Logout | Backend: `Logout()` em `UsuarioController.cs` e `AdminController.cs`.<br>Frontend: `_UsuarioLayout.cshtml` e `_AdminLayout.cshtml`. | Kerlison Luan |
+| **RF-14** | Cadastro seguro de administradores | Backend: `Usuario.cs` → `IsAdmin`.<br>Cadastro via script SQL seguro ou método interno. | Kerlison Luan |
+
+---
+
+## 4.4. Instruções de Acesso e Verificação
+
+### 4.4.1. Link da Aplicação Hospedada  
+https://sistema-denuncias-ebabgchra2a3frbe.canadacentral-01.azurewebsites.net/
+
