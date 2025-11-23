@@ -30,7 +30,7 @@ A arquitetura da solução define como o sistema de denúncias é estruturado, d
 
 ### Banco de Dados
 
-- MySQL hospedado no Azure, armazenando dados de usuários, denúncias e status.
+- SQL Server hospedado no Azure, armazenando dados de usuários, denúncias e status.
 - Mantém histórico de denúncias, integridade das informações e suporta consultas do painel administrativo.
 
 ### Área Administrativa
