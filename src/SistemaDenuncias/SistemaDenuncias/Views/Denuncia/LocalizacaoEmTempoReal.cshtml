@@ -1,125 +1,144 @@
-﻿@* Esta View precisa de um link para o arquivo CSS (denuncias.css) em seu _Layout.cshtml *@
+﻿@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery antiforgery
 @{
-    ViewData["Title"] = "Localização de Emergência";
-    // O nome do usuário vem do ViewBag.NomeUsuario que foi setado no DenunciaController
+    ViewData["Title"] = "Modo de Emergência";
+    Layout = "~/Views/Shared/_UsuarioLayout.cshtml";
+    var requestToken = antiforgery.GetAndStoreTokens(Context).RequestToken;
 }
 
-<div class="localizacao-container">
-    <h1 class="text-danger mb-4"><i class="bi bi-exclamation-octagon-fill me-2"></i> Localização de Emergência</h1>
+<div class="user-content-wrapper">
+    <div class="emergency-panel-pro">
+        <h1 class="panel-title">
+            <i class="bi bi-exclamation-octagon-fill" style="font-size: 2rem; color: var(--cor-perigo);"></i>
+            Painel de Emergência
+        </h1>
+        <p class="panel-subtitle">
+            Olá, <span class="fw-bold">@ViewBag.NomeUsuario</span>! Use os botões abaixo para notificar o administrador sobre sua situação em tempo real.
+        </p>
 
-    <div id="statusLocalizacao" class="alert alert-warning text-center">
-        Aguardando permissão de localização e carregando...
-    </div>
-
-    <div class="card mb-4 shadow-sm">
-        <div class="card-header bg-danger text-white">
-            Dados de Localização para <span class="fw-bold">@ViewBag.NomeUsuario</span>
+        <div class="emergency-actions">
+            <h5>Qual é o seu status?</h5>
+            <button class="btn-emergency danger" onclick="ativarPerigo()">
+                <i class="bi bi-broadcast-pin"></i> ATIVAR MODO PERIGO
+            </button>
+            <button class="btn-emergency safe" onclick="desativarPerigo()">
+                <i class="bi bi-shield-check"></i> ESTOU SEGURO
+            </button>
         </div>
-        <div class="card-body">
-            <dl class="row">
-                <dt class="col-sm-4">Status:</dt>
-                <dd class="col-sm-8"><span id="displayStatus" class="status-text bg-secondary text-white">Carregando</span></dd>
 
-                <dt class="col-sm-4">Latitude:</dt>
-                <dd class="col-sm-8"><span id="latitudeDisplay">--</span></dd>
-
-                <dt class="col-sm-4">Longitude:</dt>
-                <dd class="col-sm-8"><span id="longitudeDisplay">--</span></dd>
-
-                <dt class="col-sm-4">Precisão (m):</dt>
-                <dd class="col-sm-8"><span id="accuracyDisplay">--</span></dd>
-
-                <dt class="col-sm-4">Última Atualização:</dt>
-                <dd class="col-sm-8"><span id="timestampDisplay">--</span></dd>
-            </dl>
+        <div id="dangerStatusAlert" class="status-alert status-alert-info">
+            <i class="bi bi-info-circle-fill"></i>
+            <span>Seu status de segurança ainda não foi definido. Clique em um dos botões acima.</span>
         </div>
-    </div>
+        <div id="locationStatusAlert" class="status-alert status-alert-info">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Iniciando monitoramento de localização...</span>
+        </div>
 
-    <h5 class="mt-4 mb-3 border-bottom pb-2">Visualização no Mapa (Atualização a cada nova leitura)</h5>
-    <iframe id="mapaIframe" class="map-iframe" src="" allow="geolocation" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-    <div class="d-flex justify-content-center mt-4">
-        <a asp-action="Index" class="btn btn-secondary btn-lg">Voltar para Denúncias</a>
+        <iframe id="mapaIframe" class="map-frame" src="" allow="geolocation" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 </div>
 
 @section Scripts {
     <script>
-        let watchId = null; // Variável para armazenar o ID do monitoramento
+        const requestToken = "@requestToken";
+        const dangerStatusAlert = document.getElementById('dangerStatusAlert');
+        const locationStatusAlert = document.getElementById('locationStatusAlert');
+        const mapaIframe = document.getElementById('mapaIframe');
 
-        function watchLocation() {
-            if (navigator.geolocation) {
-                const options = {
-                    enableHighAccuracy: true,
-                    timeout: 5000,
-                    maximumAge: 0
+     
+        async function ativarPerigo() {
+            if (!confirm("Tem certeza que deseja ATIVAR o modo de perigo? Sua localização será compartilhada.")) return;
+
+            navigator.geolocation.getCurrentPosition(async (position) => {
+                const locationData = {
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude
                 };
 
-                // watchPosition é a chave para o "tempo real", monitorando o movimento.
-                watchId = navigator.geolocation.watchPosition(success, error, options);
-                document.getElementById('statusLocalizacao').className = 'alert alert-info text-center';
-                document.getElementById('statusLocalizacao').textContent = 'Localização monitorada com sucesso. Aguardando a primeira leitura...';
-            } else {
-                displayError("Seu navegador não suporta Geolocalização.");
+                try {
+                    const response = await fetch('/Denuncia/AtivarModoPerigo', {
+                        method: 'POST',
+                        headers: {
+                            'RequestVerificationToken': requestToken,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(locationData)
+                    });
+                    const result = await response.json();
+                    if (result.success) {
+                        updateDangerStatus(true, "MODO PERIGO ATIVADO! O administrador foi notificado.");
+                    } else {
+                        alert("Erro ao ativar modo perigo: " + result.message);
+                    }
+                } catch (error) {
+                    console.error("Falha na chamada para AtivarModoPerigo:", error);
+                }
+            },
+            (error) => {
+                alert("Não foi possível obter sua localização para ativar o modo perigo. Verifique as permissões do navegador.");
+                console.error("Erro ao obter localização: ", error);
+            });
+        }
+
+        async function desativarPerigo() {
+             try {
+                const response = await fetch('/Denuncia/DesativarModoPerigo', {
+                    method: 'POST',
+                    headers: { 'RequestVerificationToken': requestToken }
+                });
+                const result = await response.json();
+                if (result.success) {
+                    updateDangerStatus(false, "Você está seguro. O administrador foi notificado.");
+                } else {
+                    alert("Erro ao desativar modo perigo: " + result.message);
+                }
+            } catch (error) {
+                console.error("Falha na chamada para DesativarModoPerigo:", error);
             }
         }
 
-        function success(position) {
+        function updateDangerStatus(isDanger, message) {
+            dangerStatusAlert.className = isDanger ? 'status-alert status-alert-danger' : 'status-alert status-alert-success';
+            const icon = isDanger ? '<i class="bi bi-exclamation-triangle-fill"></i>' : '<i class="bi bi-check-circle-fill"></i>';
+            dangerStatusAlert.innerHTML = `${icon} <span>${message}</span>`;
+        }
+
+        function updateLocationStatus(statusType, message) {
+            locationStatusAlert.className = `status-alert status-alert-${statusType}`;
+            let icon = '<i class="bi bi-geo-alt-fill"></i>';
+            if (statusType === 'danger') icon = '<i class="bi bi-exclamation-circle-fill"></i>';
+            if (statusType === 'info') icon = '<i class="bi bi-info-circle-fill"></i>';
+            locationStatusAlert.innerHTML = `${icon} <span>${message}</span>`;
+        }
+
+        let watchId = null;
+        function watchLocation() {
+            if (navigator.geolocation) {
+                const options = { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 };
+                watchId = navigator.geolocation.watchPosition(geolocationSuccess, geolocationError, options);
+            } else {
+                updateLocationStatus('danger', "Seu navegador não suporta Geolocalização.");
+            }
+        }
+
+        function geolocationSuccess(position) {
             const lat = position.coords.latitude;
             const lng = position.coords.longitude;
-            const accuracy = position.coords.accuracy;
             const timestamp = new Date(position.timestamp).toLocaleTimeString();
-
-            const statusDisplay = document.getElementById('displayStatus');
-            statusDisplay.textContent = 'TRANSMITINDO';
-            statusDisplay.className = 'status-text bg-danger text-white';
-
-            document.getElementById('latitudeDisplay').textContent = lat.toFixed(6);
-            document.getElementById('longitudeDisplay').textContent = lng.toFixed(6);
-            document.getElementById('accuracyDisplay').textContent = accuracy.toFixed(2);
-            document.getElementById('timestampDisplay').textContent = timestamp;
-
-            const mapIframe = document.getElementById('mapaIframe');
-            // 'z=16' é o nível de zoom
-            mapIframe.src = `https://maps.google.com/maps?q=${lat},${lng}&z=16&output=embed`;
-
-            document.getElementById('statusLocalizacao').className = 'alert alert-success text-center';
-            document.getElementById('statusLocalizacao').textContent = `Localização ATUALIZADA às ${timestamp}.`;
+            mapaIframe.src = `https://maps.google.com/maps?q=${lat},${lng}&z=16&output=embed`;
+            updateLocationStatus('success', `Localização atualizada com sucesso às ${timestamp}.`);
         }
 
-        function error(err) {
-            let msg = '';
-            switch (err.code) {
-                case err.PERMISSION_DENIED:
-                    msg = "Permissão negada. Por favor, habilite a localização.";
-                    break;
-                case err.POSITION_UNAVAILABLE:
-                    msg = "Informação de localização indisponível no momento.";
-                    break;
-                case err.TIMEOUT:
-                    msg = "Tempo limite excedido para obter a localização.";
-                    break;
-                default:
-                    msg = `Erro desconhecido: ${err.message}`;
-            }
-            displayError(msg);
+        function geolocationError(err) {
+            let msg = 'Erro desconhecido ao obter localização.';
+            if (err.code === err.PERMISSION_DENIED) msg = "Permissão de localização negada. Habilite nas configurações do seu navegador.";
+            if (err.code === err.POSITION_UNAVAILABLE) msg = "Informação de localização indisponível no momento.";
+            if (err.code === err.TIMEOUT) msg = "Tempo limite excedido para obter a localização.";
+            updateLocationStatus('danger', msg);
         }
 
-        function displayError(message) {
-            document.getElementById('statusLocalizacao').className = 'alert alert-danger text-center';
-            document.getElementById('statusLocalizacao').textContent = `ERRO: ${message}`;
-            document.getElementById('displayStatus').textContent = 'FALHA';
-            document.getElementById('displayStatus').className = 'status-text bg-danger text-white';
-        }
-
-        // Para parar o monitoramento quando o usuário sair da página, liberando recursos
-        window.onbeforeunload = function() {
-            if (watchId !== null) {
-                navigator.geolocation.clearWatch(watchId);
-            }
-        };
-
-        // Inicia o processo quando a página é carregada
+        window.onbeforeunload = function() { if (watchId !== null) navigator.geolocation.clearWatch(watchId); };
         document.addEventListener('DOMContentLoaded', watchLocation);
     </script>
 }
+```

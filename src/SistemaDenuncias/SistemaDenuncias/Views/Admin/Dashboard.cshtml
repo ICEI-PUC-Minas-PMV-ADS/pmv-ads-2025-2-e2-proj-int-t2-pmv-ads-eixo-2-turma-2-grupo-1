@@ -1,0 +1,120 @@
+﻿@model SistemaDenuncias.Models.DashboardViewModel
+@{
+    ViewData["Title"] = "Dashboard do Administrador";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<div class="dashboard-container">
+    <div class="welcome-message">
+        Seja bem vindo, @Model.NomeAdmin!
+    </div>
+
+   
+    <a href="#" data-bs-toggle="modal" data-bs-target="#perigoModal" style="text-decoration: none;">
+        <div class="danger-circle">
+            <span class="title">USUÁRIOS EM PERIGO</span>
+            <span id="usuarios-perigo-count" class="number">@Model.UsuariosEmPerigo</span>
+        </div>
+    </a>
+
+    <div class="stats-container">
+        <div class="stat-card">
+            <div class="title title-abertas">Abertas</div>
+            <div class="icon"><i class="fa-solid fa-stopwatch"></i></div>
+            <div class="number">@Model.DenunciasAbertas</div>
+        </div>
+        <div class="stat-card">
+            <div class="title title-analise">Análise</div>
+            <div class="icon"><i class="fa-solid fa-spinner fa-spin"></i></div>
+            <div class="number">@Model.DenunciasEmAnalise</div>
+        </div>
+        <div class="stat-card">
+            <div class="title title-finalizadas">Finalizadas</div>
+            <div class="icon"><i class="fa-solid fa-hourglass-end"></i></div>
+            <div class="number">@Model.DenunciasFechadas</div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="perigoModal" tabindex="-1" aria-labelledby="perigoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="perigoModalLabel"><i class="fa-solid fa-triangle-exclamation text-danger"></i> Usuários em Perigo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>A lista abaixo é atualizada sempre que este painel é aberto.</p>
+                <ul id="listaUsuariosPerigo">
+                    <!-- O JavaScript irá preencher esta lista -->
+                    <li>Carregando...</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function atualizarContadorPerigo() {
+            fetch('/Admin/UsuariosEmPerigoCount')
+                .then(response => response.json())
+                .then(data => {
+                    const countElement = document.getElementById('usuarios-perigo-count');
+                    if (countElement.innerText !== data.count.toString()) {
+                        countElement.innerText = data.count;
+                       
+                        countElement.classList.add('animate__animated', 'animate__flash');
+                        setTimeout(() => countElement.classList.remove('animate__animated', 'animate__flash'), 1000);
+                    }
+                })
+                .catch(error => console.error('Erro ao buscar contagem:', error));
+        }
+
+        const perigoModal = document.getElementById('perigoModal');
+        perigoModal.addEventListener('show.bs.modal', async function (event) {
+            const listaElement = document.getElementById('listaUsuariosPerigo');
+            listaElement.innerHTML = '<li><i class="fa-solid fa-spinner fa-spin"></i> Carregando lista...</li>';
+
+            try {
+                const response = await fetch('/Admin/GetUsuariosEmPerigo');
+                const usuarios = await response.json();
+
+                listaElement.innerHTML = ''; // Limpa a lista
+
+                if (usuarios.length === 0) {
+                    listaElement.innerHTML = '<li>Nenhum usuário em perigo no momento.</li>';
+                    return;
+                }
+
+                usuarios.forEach(usuario => {
+                    const mapLink = `https://www.google.com/maps?q=${usuario.latitude},${usuario.longitude}`;
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                        <span class="user-name">${usuario.nome}</span>
+                        <a href="${mapLink}" target="_blank" class="location-link">
+                            <i class="fa-solid fa-map-location-dot"></i> Ver Localização
+                        </a>
+                    `;
+                    listaElement.appendChild(listItem);
+                });
+
+            } catch (error) {
+                console.error('Erro ao buscar lista de usuários:', error);
+                listaElement.innerHTML = '<li>Ocorreu um erro ao carregar a lista. Tente novamente.</li>';
+            }
+        });
+
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            atualizarContadorPerigo();
+            setInterval(atualizarContadorPerigo, 10000); // Atualiza o contador a cada 10 segundos
+        });
+    </script>
+}

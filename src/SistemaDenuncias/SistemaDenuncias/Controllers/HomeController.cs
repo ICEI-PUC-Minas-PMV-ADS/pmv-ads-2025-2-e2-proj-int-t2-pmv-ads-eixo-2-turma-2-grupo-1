@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using SistemaDenuncias.Models;
+using Microsoft.AspNetCore.Authorization; 
 
 namespace SistemaDenuncias.Controllers
 {
@@ -13,9 +14,25 @@ namespace SistemaDenuncias.Controllers
             _logger = logger;
         }
 
+        
+        [AllowAnonymous] 
         public IActionResult Index()
         {
-            return View();
+            // 1. Verifica se o usuário já está autenticado
+            if (User.Identity.IsAuthenticated)
+            {
+                // 2. Se for um Administrador, redireciona para a Dashboard de Admin
+                if (User.IsInRole("Admin"))
+                {
+                    return RedirectToAction("Dashboard", "Admin");
+                }
+
+                // 3. Se for um usário comum, redireciona para o painel de denúncias
+                return RedirectToAction("Index", "Denuncia");
+            }
+
+            // 4. Se não estiver autenticado, redireciona para a página de login de usuário
+            return RedirectToAction("Login", "Usuario");
         }
 
         public IActionResult Privacy()

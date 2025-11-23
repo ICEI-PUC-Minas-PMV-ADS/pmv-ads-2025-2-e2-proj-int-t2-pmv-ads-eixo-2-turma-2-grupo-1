@@ -1,73 +1,27 @@
 ﻿@model SistemaDenuncias.Models.Denuncia
-
 @{
-    ViewData["Title"] = "Excluir Denúncia: " + Model.Protocolo;
+    ViewData["Title"] = "Confirmar Exclusão";
+    Layout = "~/Views/Shared/_UsuarioLayout.cshtml";
 }
 
-<h1 class="text-danger">Excluir Denúncia</h1>
+<div class="user-content-wrapper">
+    <div class="delete-view">
+        <h1 class="text-danger"><i class="bi bi-exclamation-triangle-fill"></i> Confirmar Exclusão</h1>
+        <h3>Você tem certeza que deseja excluir esta denúncia?</h3>
+        <p class="text-muted">Esta ação não pode ser desfeita.</p>
 
-<div class="alert alert-danger p-4 shadow-sm" role="alert">
-    <h4 class="alert-heading"><i class="bi bi-exclamation-triangle-fill me-2"></i> Atenção!</h4>
-    <p class="mb-0">Tem certeza que deseja excluir a denúncia de **Protocolo @Html.DisplayFor(model => model.Protocolo)**? Esta ação é irreversível.</p>
-</div>
+        <div class="details-view mt-4">
+            <div class="details-row"><div class="details-label">Protocolo:</div><div class="details-value fw-bold">@Model.Protocolo</div></div>
+            <div class="details-row"><div class="details-label">Tipo:</div><div class="details-value">@Model.TipoDenuncia</div></div>
+        </div>
 
-<hr />
-
-<div class="card shadow-lg mb-4 border-danger">
-    <div class="card-header bg-danger text-white">
-        <h5>Detalhes para Confirmação de Exclusão</h5>
-    </div>
-    <div class="card-body">
-
-        <dl class="row details-dl">
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.TipoDenuncia)
-            </dt>
-            <dd class="col-sm-9">
-                @Html.DisplayFor(model => model.TipoDenuncia)
-            </dd>
-
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.Status)
-            </dt>
-            <dd class="col-sm-9">
-                <span class="badge p-2
-                      @(Model.Status == SistemaDenuncias.Models.StatusDenuncia.Aberta ? "bg-warning text-dark" : "bg-info text-white")">
-                    @Html.DisplayFor(model => model.Status)
-                </span>
-            </dd>
-
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.DataCriacao)
-            </dt>
-            <dd class="col-sm-9">
-                @Html.DisplayFor(model => model.DataCriacao)
-            </dd>
-
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.Descricao)
-            </dt>
-            <dd class="col-sm-9">
-                <p class="details-description">
-                    @Html.DisplayFor(model => model.Descricao)
-                </p>
-            </dd>
-
-            <dt class="col-sm-3">
-                Localização
-            </dt>
-            <dd class="col-sm-9">
-                @Html.DisplayFor(model => model.Rua), @Html.DisplayFor(model => model.Numero) -
-                @Html.DisplayFor(model => model.Cidade)/@Html.DisplayFor(model => model.Estado)
-            </dd>
-        </dl>
-
-        <hr class="mt-4" />
-
-        <form asp-action="Delete" class="d-flex justify-content-end gap-2">
+        <form asp-action="Delete" method="post">
+            @Html.AntiForgeryToken()
             <input type="hidden" asp-for="Id" />
-            <a asp-action="Index" class="btn btn-secondary btn-lg">Cancelar</a>
-            <input type="submit" value="Confirmar Exclusão" class="btn btn-danger btn-lg" />
+            <div class="form-actions">
+                <a asp-action="Index" class="btn-form btn-form-secondary">Cancelar</a>
+                <button type="submit" class="btn-form btn-danger">Confirmar Exclusão</button>
+            </div>
         </form>
     </div>
 </div>

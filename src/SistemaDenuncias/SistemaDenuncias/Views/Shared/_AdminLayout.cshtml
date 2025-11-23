@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Admin ProtecSys</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- CSS do Bootstrap-->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Nossos CSS customizados -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/dashboard.css" asp-append-version="true" />
+</head>
+<body style="padding-bottom: 80px;">
+
+    <header class="admin-header">
+        <a class="logo" asp-controller="Admin" asp-action="Dashboard">PROTEC<span>sys</span></a>
+        <nav class="nav-links">
+            <a asp-controller="Admin" asp-action="Dashboard">PÁGINA INICIAL</a>
+            <a asp-controller="Admin" asp-action="Index">VISUALIZAR TODAS DENÚNCIAS</a>
+        </nav>
+        <div class="user-icons">
+            <form asp-controller="Admin" asp-action="Logout" method="post" id="logoutFormAdmin" style="display: inline;">
+                @Html.AntiForgeryToken()
+                <a href="#" onclick="document.getElementById('logoutFormAdmin').submit();" title="Sair">
+                    <i class="fa-solid fa-circle-user"></i>
+                </a>
+            </form>
+            <a href="#" title="Notificações"><i class="fa-solid fa-bullhorn"></i></a>
+        </div>
+    </header>
+
+    <div>
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="admin-footer">
+        &copy; @DateTime.Now.Year - ProtecSys – Sistema de Denúncias Corporativas. Todos os direitos reservados.
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+  
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

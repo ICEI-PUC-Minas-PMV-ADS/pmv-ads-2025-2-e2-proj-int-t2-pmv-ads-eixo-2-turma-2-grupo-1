@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SistemaDenuncias.Models.Denuncia>
+@{
+    ViewData["Title"] = "Todas as Denúncias";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="admin-denuncias-container">
+    <h1 class="mb-4">Gerenciamento de Denúncias</h1>
+
+    <table class="table-denuncias">
+        <thead>
+            <tr>
+                <th>Protocolo</th>
+                <th>Tipo</th>
+                <th>Denunciante</th>
+                <th>Data</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td><strong>@item.Protocolo</strong></td>
+                    <td>@item.TipoDenuncia</td>
+                    <td>@(item.DenunciaAnonima ? "Anônimo" : item.Usuario.Nome)</td>
+                    <td>@item.DataCriacao.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        @{
+                            var statusClass = "status-analise";
+                            if (item.Status == StatusDenuncia.Aberta) { statusClass = "status-aberta"; }
+                            else if (item.Status == StatusDenuncia.Fechada) { statusClass = "status-fechada"; }
+                        }
+                        <span class="status-tag @statusClass">@item.Status.ToString()</span>
+                    </td>
+                    <td>
+                        <a asp-action="GerenciarDenuncia" asp-route-id="@item.Id" class="btn-gerenciar">
+                            <i class="fa-solid fa-magnifying-glass"></i> Detalhes
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

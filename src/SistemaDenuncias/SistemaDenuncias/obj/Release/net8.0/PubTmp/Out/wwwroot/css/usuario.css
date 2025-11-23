@@ -1,0 +1,92 @@
+﻿/*DESTINADA A ESTILIXAÇÃO DA PAGINA DE LOGIN E CADASTRO*/
+
+@charset "UTF-8";
+
+/*Aqui vai as importações das fontes no CSS*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crafty+Girls&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@font-face {
+    font-family: "Lemon Milk";
+    src: url(../font/LEMONMILK-Bold.otf);
+    font-weight: bold;
+}
+
+/*Aqui vai as Configurações padrões da paletas de cor e definição das fontes no CSS*/
+:root {
+    --corTexto: #000;
+    --corFundo: #333333;
+    --corFundoSecundario: #BCBCBC;
+    --corTextoDestaque: #1976D2;
+    --sucesso: #388E3C;
+    --aviso: #FBC02D;
+    --erro: #D32F2F;
+    --branco: #FFF;
+    /*Fontes*/
+    --font-titulo: "Lemon Milk";
+    --font-subititulo: "Bebas Neue", serif;
+    --font-paragrafos: "Roboto", normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+h1, h2, h3 {
+    font-family: 'Lemon Milk';
+    color: var(--corTexto);
+    text-align: center;
+}
+
+form {
+    color: var(--corTexto);
+    font-family: var(--font-subititulo);
+}
+
+    form input {
+        margin-bottom: 10px;
+    }
+
+
+    form button {
+        font-family: var(--font-paragrafos);
+        color: var(--branco);
+       text-align: center;
+        background-color: var(--sucesso);
+        width: 100%;
+        border-radius: 15px;
+        padding: 8px;
+        border: none;
+        transition: 0.5s;
+
+    }
+
+        form button:hover {
+            background-color: #6cff73;
+        }
+
+
+.mt-3 a {
+    text-decoration: none;
+    color: var(--branco);
+}
+
+.mt-3 {
+    font-family: var(--font-paragrafos);
+    text-align: center;
+    background-color: var(--corFundo);
+    width: 100%;
+    border-radius: 15px;
+    padding: 8px;
+    border: none;
+    transition: 0.5s;
+}
+
+    .mt-3:hover {
+        background-color: #6cff73;
+    }

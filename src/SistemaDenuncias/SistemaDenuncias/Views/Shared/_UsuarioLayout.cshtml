@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ProtecSys</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="~/css/usuario-style.css" asp-append-version="true" />
+</head>
+<body class="user-scope">
+
+    <header class="user-header">
+        <a class="logo" asp-controller="Denuncia" asp-action="Index">PROTEC<span>sys</span></a>
+
+        <nav class="nav-links">
+            <a asp-controller="Denuncia" asp-action="Index">Minhas Denúncias</a>
+            <a asp-controller="Denuncia" asp-action="Create">Registrar Denúncia</a>
+            <form asp-controller="Usuario" asp-action="Logout" method="post" style="display: inline;">
+                @Html.AntiForgeryToken()
+                <button type="submit">Realizar Logout</button>
+            </form>
+        </nav>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="user-footer">
+        &copy; @DateTime.Now.Year - ProtecSys – Sistema de Denúncias Corporativas. Todos os direitos reservados.
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,313 @@
+﻿
+/* ---VARIÁVEIS --- */
+:root {
+    --cor-fundo-escuro: #2D3035;
+    --cor-fundo-claro: #F0F2F5;
+    --cor-container: #FFFFFF;
+    --cor-principal: #0d6efd; 
+    --cor-sucesso: #198754;
+    --cor-alerta: #ffc107;
+    --cor-perigo: #dc3545;
+    --cor-info: #0dcaf0;
+    --cor-texto-claro: #f8f9fa;
+    --cor-texto-escuro: #212529;
+    --cor-texto-suave: #6c757d;
+    --cor-borda: #dee2e6;
+    --sombra-padrao: 0 8px 25px rgba(0,0,0,0.08);
+    --fonte-principal: 'Montserrat', sans-serif;
+}
+
+/* --- ESTILOS GERAIS --- */
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo-claro);
+    color: var(--cor-texto-escuro);
+    padding-bottom: 80px;
+}
+
+/* --- CABEÇALHO --- */
+.admin-header {
+    background-color: var(--cor-fundo-escuro);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--cor-texto-claro);
+}
+
+    .admin-header .logo {
+        font-size: 24px;
+        font-weight: 900;
+        color: var(--cor-texto-claro);
+        text-decoration: none;
+    }
+
+        .admin-header .logo span {
+            color: var(--cor-info);
+        }
+
+    .admin-header .nav-links a {
+        color: #ced4da;
+        text-decoration: none;
+        margin: 0 20px;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        transition: color 0.2s ease-in-out;
+    }
+
+        .admin-header .nav-links a:hover {
+            color: white;
+        }
+
+    .admin-header .user-icons a {
+        color: white;
+        font-size: 22px;
+        margin-left: 25px;
+        transition: color 0.2s ease-in-out;
+    }
+
+        .admin-header .user-icons a:hover {
+            color: var(--cor-info);
+        }
+
+/* --- CONEÚDO PRINCIPAL (DASHBOARD E LISTAS) --- */
+.dashboard-container,
+.admin-denuncias-container {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 40px;
+}
+
+.welcome-message {
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* --- CÍRCULO DE PERIGO --- */
+.danger-circle {
+    width: 250px;
+    height: 250px;
+    border: 4px solid var(--cor-perigo);
+    border-radius: 50%;
+    margin: 20px auto 60px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .danger-circle:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 25px rgba(220, 53, 69, 0.4);
+    }
+
+    .danger-circle .title {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--cor-texto-suave);
+        text-transform: uppercase;
+    }
+
+    .danger-circle .number {
+        font-size: 6rem;
+        font-weight: 900;
+        color: var(--cor-texto-escuro);
+        line-height: 1.1;
+    }
+
+/* --- CARDS DE ESTATÍSTICAS --- */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.stat-card {
+    background-color: var(--cor-container);
+    border-radius: 15px;
+    box-shadow: var(--sombra-padrao);
+    padding: 25px;
+    text-align: center;
+    border-top: 4px solid var(--cor-borda);
+    transition: transform 0.2s ease-in-out;
+}
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .stat-card .title {
+        font-size: 0.9rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        color: var(--cor-texto-suave);
+    }
+
+    .stat-card .icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+    }
+
+    .stat-card .number {
+        font-size: 2.5rem;
+        font-weight: 900;
+    }
+    /* Cores específicas dos cards */
+    .stat-card.abertas {
+        border-top-color: var(--cor-alerta);
+    }
+
+        .stat-card.abertas .icon, .stat-card.abertas .number {
+            color: var(--cor-alerta);
+        }
+
+    .stat-card.analise {
+        border-top-color: var(--cor-info);
+    }
+
+        .stat-card.analise .icon, .stat-card.analise .number {
+            color: var(--cor-info);
+        }
+
+    .stat-card.finalizadas {
+        border-top-color: var(--cor-sucesso);
+    }
+
+        .stat-card.finalizadas .icon, .stat-card.finalizadas .number {
+            color: var(--cor-sucesso);
+        }
+
+
+/* --- PÁGINA DE LISTA DE DENÚNCIAS DO ADMIN --- */
+.admin-denuncias-container {
+    background-color: var(--cor-container);
+    border-radius: 15px;
+    box-shadow: var(--sombra-padrao);
+}
+
+.table-denuncias {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .table-denuncias th, .table-denuncias td {
+        padding: 1rem 1.5rem;
+        text-align: left;
+        border-bottom: 1px solid var(--cor-borda);
+    }
+
+    .table-denuncias th {
+        background-color: var(--cor-fundo-claro);
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        color: var(--cor-texto-suave);
+    }
+
+    .table-denuncias tbody tr {
+        transition: background-color 0.2s ease-in-out;
+    }
+
+        .table-denuncias tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .table-denuncias tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+.status-tag {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 700;
+    color: var(--cor-texto-escuro);
+    font-size: 12px;
+    display: inline-block;
+}
+
+.status-aberta {
+    background-color: #fff3cd;
+    color: #664d03;
+}
+
+.status-analise {
+    background-color: #cff4fc;
+    color: #055160;
+}
+
+.status-fechada {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.btn-gerenciar {
+    background-color: var(--cor-principal);
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+    .btn-gerenciar:hover {
+        background-color: #0b5ed7;
+    }
+
+/* --- RODAPÉ --- */
+.admin-footer {
+    background-color: var(--cor-fundo-escuro);
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* ---USUÁRIOS EM PERIGO --- */
+.modal-body ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.modal-body li {
+    padding: 15px;
+    border-bottom: 1px solid var(--cor-borda);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .modal-body li:last-child {
+        border-bottom: none;
+    }
+
+.modal-body .user-name {
+    font-weight: 700;
+}
+
+.modal-body .location-link {
+    background-color: var(--cor-principal);
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+    .modal-body .location-link:hover {
+        background-color: #0b5ed7;
+    }

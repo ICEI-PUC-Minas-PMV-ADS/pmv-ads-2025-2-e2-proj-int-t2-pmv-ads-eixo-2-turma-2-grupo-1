@@ -1,31 +1,47 @@
-﻿<link rel="stylesheet" href="~/css/usuario.css" asp-append-version="true" />
+﻿@model SistemaDenuncias.Models.Usuario
 
 @{
-    ViewData["Title"] = "Login";
+    Layout = null;
 }
 
-<h2>Realize seu login</h2>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - ProtecSys</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/usuario-style.css" asp-append-version="true" />
+</head>
+<body class="user-scope">
 
-<form asp-action="Login" method="post">
-    <div asp-validation-summary="All"></div>
+    <div class="form-page-container">
+        <div class="form-box">
+            <h1>BEM-VINDO DE VOLTA</h1>
+            <form asp-action="Login" method="post">
+                @Html.AntiForgeryToken()
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger mb-3"></div>
 
-    <div class="form-group">
-        <label for="email">E-mail</label>
-        <input name="email" id="email" class="form-control" />
+                <div class="form-group">
+                    <label for="email">E-MAIL:</label>
+                    <input name="email" id="email" class="form-control-custom" placeholder="seuEmail@gmail.com" />
+                </div>
+                <div class="form-group">
+                    <label for="senha">SENHA:</label>
+                    <input name="senha" id="senha" type="password" class="form-control-custom" placeholder="Sua senha" />
+                </div>
+
+                <button type="submit" class="btn-custom-primary">Entrar</button>
+                <a asp-action="Cadastro" class="btn-custom-secondary">Não tenho uma conta</a>
+            </form>
+        </div>
     </div>
 
-    <div class="form-group">
-        <label for="senha">Senha</label>
-        <input name="senha" id="senha" type="password" class="form-control" />
-    </div>
+    <footer class="user-footer" style="position:fixed; bottom:0; width:100%;">
+        &copy; @DateTime.Now.Year - ProtecSys – Sistema de Denúncias Corporativas.
+    </footer>
 
-    <button type="submit" class="submit">Entrar</button>
-</form>
-
-<p class="mt-3">
-     <a asp-action="Cadastro">Não possuo conta:</a>
-</p>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+</body>
+</html>

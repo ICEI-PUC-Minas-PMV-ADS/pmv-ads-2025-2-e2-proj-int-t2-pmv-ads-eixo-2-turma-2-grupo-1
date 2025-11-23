@@ -1,97 +1,40 @@
 ﻿@model SistemaDenuncias.Models.Denuncia
-
 @{
     ViewData["Title"] = "Nova Denúncia";
+    Layout = "~/Views/Shared/_UsuarioLayout.cshtml";
 }
 
-<h1>@ViewData["Title"]</h1>
+<div class="user-content-wrapper">
+    <div class="form-container">
+        <h1><i class="bi bi-journal-plus"></i> Nova Denúncia</h1>
+        <p class="text-center text-muted mb-4">Preencha os detalhes abaixo para registrar uma nova ocorrência.</p>
 
-<h4>Preencha os detalhes da sua denúncia</h4>
-<hr />
-<div class="row justify-content-center">
-    <div class="col-md-9">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="Create" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
 
-            <div class="form-group mb-3">
-                <label asp-for="TipoDenuncia" class="control-label fw-bold"></label>
-                <input asp-for="TipoDenuncia" class="form-control" />
-                <span asp-validation-for="TipoDenuncia" class="text-danger"></span>
+            <div class="form-group grid-full-width"><label asp-for="TipoDenuncia">Tipo de Denúncia</label><input asp-for="TipoDenuncia" class="form-control-custom" placeholder="Ex: Roubo de Carga, Som Alto, etc." /></div>
+            <div class="form-group grid-full-width"><label asp-for="Descricao">Descrição do Fato</label><textarea asp-for="Descricao" class="form-control-custom" placeholder="Descreva com o máximo de detalhes o que aconteceu."></textarea></div>
+
+            <h5 class="mt-4 grid-full-width">Localização do Fato</h5><hr class="grid-full-width" />
+
+            <div class="form-grid">
+                <div class="form-group"><label asp-for="Estado">Estado</label><input asp-for="Estado" class="form-control-custom" placeholder="Ex: MG" /></div>
+                <div class="form-group"><label asp-for="Cidade">Cidade</label><input asp-for="Cidade" class="form-control-custom" placeholder="Ex: Carmo do Cajuru" /></div>
+                <div class="form-group grid-full-width"><label asp-for="Rua">Rua</label><input asp-for="Rua" class="form-control-custom" placeholder="Ex: Av. Principal" /></div>
+                <div class="form-group"><label asp-for="Numero">Número</label><input asp-for="Numero" class="form-control-custom" /></div>
+                <div class="form-group"><label asp-for="Cep">CEP</label><input asp-for="Cep" class="form-control-custom" placeholder="00000-000" /></div>
+                <div class="form-group"><label asp-for="Bairro">Bairro</label><input asp-for="Bairro" class="form-control-custom" /></div>
+                <div class="form-group"><label asp-for="Complemento">Complemento</label><input asp-for="Complemento" class="form-control-custom" placeholder="Ex: Apto 101, Fundos" /></div>
             </div>
 
-            <div class="form-group mb-3">
-                <label asp-for="Descricao" class="control-label fw-bold"></label>
-                <textarea asp-for="Descricao" rows="5" class="form-control"></textarea>
-                <span asp-validation-for="Descricao" class="text-danger"></span>
-            </div>
+            <hr class="grid-full-width" />
+            <div class="form-group grid-full-width" style="display: flex; align-items: center; gap: 10px;"><input asp-for="DenunciaAnonima" type="checkbox" /><label asp-for="DenunciaAnonima" style="margin:0;">Marque se você deseja que esta denúncia seja tratada anonimamente.</label></div>
 
-            <!-- Seção de Endereço -->
-            <fieldset class="fieldset-custom my-4">
-                <legend class="w-auto px-2">Localização do Fato</legend>
-
-                <div class="row">
-                    <div class="form-group col-md-4 mb-3">
-                        <label asp-for="Estado" class="control-label"></label>
-                        <input asp-for="Estado" class="form-control" maxlength="2" placeholder="Ex: MG" />
-                        <span asp-validation-for="Estado" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-md-8 mb-3">
-                        <label asp-for="Cidade" class="control-label"></label>
-                        <input asp-for="Cidade" class="form-control" />
-                        <span asp-validation-for="Cidade" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="form-group col-md-6 mb-3">
-                        <label asp-for="Rua" class="control-label"></label>
-                        <input asp-for="Rua" class="form-control" />
-                        <span asp-validation-for="Rua" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-md-3 mb-3">
-                        <label asp-for="Numero" class="control-label"></label>
-                        <input asp-for="Numero" class="form-control" />
-                        <span asp-validation-for="Numero" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-md-3 mb-3">
-                        <label asp-for="Cep" class="control-label"></label>
-                        <input asp-for="Cep" class="form-control" maxlength="9" placeholder="00000-000" />
-                        <span asp-validation-for="Cep" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="form-group col-md-6 mb-3">
-                        <label asp-for="Bairro" class="control-label"></label>
-                        <input asp-for="Bairro" class="form-control" />
-                        <span asp-validation-for="Bairro" class="text-danger"></span>
-                    </div>
-                    <div class="form-group col-md-6 mb-3">
-                        <label asp-for="Complemento" class="control-label"></label>
-                        <input asp-for="Complemento" class="form-control" />
-                        <span asp-validation-for="Complemento" class="text-danger"></span>
-                    </div>
-                </div>
-            </fieldset>
-
-            <div class="form-group form-check mb-4 p-3 border rounded bg-light">
-                <label class="form-check-label d-flex align-items-center">
-                    <input class="form-check-input me-2" type="checkbox" asp-for="DenunciaAnonima" style="transform: scale(1.2);" />
-                    <span class="fw-bold text-dark">@Html.DisplayNameFor(model => model.DenunciaAnonima)</span>
-                </label>
-                <small class="text-muted ms-4 d-block">Marque se você deseja que esta denúncia seja tratada anonimamente. Seu nome não será revelado.</small>
-            </div>
-
-            <div class="form-group d-flex justify-content-end gap-2 mt-4">
-                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
-                <input type="submit" value="Criar Denúncia" class="btn btn-primary btn-lg" />
+            <div class="form-actions">
+                <a asp-action="Index" class="btn-form btn-form-secondary">Cancelar</a>
+                <button type="submit" class="btn-form btn-form-primary">Criar Denúncia</button>
             </div>
         </form>
     </div>
 </div>
-
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}

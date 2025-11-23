@@ -4,26 +4,32 @@ using SistemaDenuncias.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Adiciona os serviços ao contêiner
-builder.Services.AddControllersWithViews();
 
-// Atualização em tempo real do Razor ('Tarefa implementada por Henrique Alves')
+builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
-// Configuração do banco de dados SQL Server local ('Tarefa implementada por Henrique Alves')
+// Configuração do banco de dados
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Configuração de autenticação com Cookies ('Tarefa implementada por Henrique Alves')
+
+
+// Configuração de AUTENTICAÇÃO com Cookies
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
-        // ('Tarefa implementada por Henrique Alves')
-        options.LoginPath = "/Usuario/Login";   // rota de login
-        options.LogoutPath = "/Usuario/Logout"; // rota de logout
-        options.ExpireTimeSpan = TimeSpan.FromHours(8); // duração do cookie
-        options.AccessDeniedPath = "/Usuario/AcessoNegado"; // opcional (caso crie esta view futuramente)
+        options.LoginPath = "/Usuario/Login"; // Página para usuários comuns não logados
+        options.AccessDeniedPath = "/Usuario/AcessoNegado"; // Página para usuários logados mas SEM permissão
+        options.ExpireTimeSpan = TimeSpan.FromHours(8);
     });
+
+// Configuração de AUTORIZAÇÃO
+builder.Services.AddAuthorization(options =>
+{
+
+    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
+});
+
 
 var app = builder.Build();
 
@@ -38,11 +44,12 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthentication(); // 
-app.UseAuthorization();
+app.UseAuthentication(); 
+app.UseAuthorization();  
+
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Usuario}/{action=Login}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

@@ -1,0 +1,503 @@
+﻿
+:root {
+    --cor-fundo-escuro: #2D3035;
+    --cor-fundo-claro: #F0F2F5;
+    --cor-container: #FFFFFF;
+    --cor-principal: #28a745;
+    --cor-secundaria: #343A40;
+    --cor-perigo: #dc3545;
+    --cor-texto-claro: #E9ECEF;
+    --cor-texto-escuro: #212529;
+    --cor-texto-suave: #6c757d;
+    --cor-borda: #dee2e6;
+    --cor-azul-logo: #0d6efd;
+    --fonte-principal: 'Montserrat', sans-serif;
+}
+
+/* --- ESTILOS GERAIS DO CORPO --- */
+body.user-scope {
+    background-color: var(--cor-fundo-escuro);
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto-escuro);
+}
+
+/* --- ESTRUTURA PRINCIPAL (HEADER, FOOTER, CONTENT) --- */
+.user-header {
+    background-color: var(--cor-container);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+    .user-header .logo {
+        font-size: 24px;
+        font-weight: 900;
+        color: var(--cor-fundo-escuro);
+        text-decoration: none;
+    }
+
+        .user-header .logo span {
+            color: var(--cor-azul-logo);
+        }
+
+    .user-header .nav-links a, .user-header .nav-links button {
+        color: var(--cor-texto-escuro);
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: color 0.2s;
+    }
+
+        .user-header .nav-links a:hover, .user-header .nav-links button:hover {
+            color: var(--cor-principal);
+        }
+
+.user-footer {
+    background-color: var(--cor-fundo-escuro);
+    color: #aaa;
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    margin-top: 40px;
+}
+
+.user-content-wrapper {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: var(--cor-fundo-claro);
+    border-radius: 15px;
+}
+
+/* --- FORMULÁRIOS DE LOGIN E CADASTRO --- */
+.form-page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+.form-box {
+    background-color: var(--cor-container);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+    .form-box h1 {
+        font-weight: 900;
+        margin-bottom: 30px;
+    }
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+    .form-group label {
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 8px;
+        display: block;
+        color: var(--cor-texto-suave);
+    }
+
+.form-control-custom {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+    .form-control-custom:focus {
+        border-color: var(--cor-principal);
+        box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
+        outline: none;
+    }
+
+textarea.form-control-custom {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.btn-custom-primary, .btn-custom-secondary {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: block;
+    color: white !important;
+}
+
+.btn-custom-primary {
+    background-color: var(--cor-principal);
+}
+
+    .btn-custom-primary:hover {
+        background-color: #218838;
+    }
+
+.btn-custom-secondary {
+    background-color: var(--cor-secundaria);
+    margin-top: 10px;
+}
+
+    .btn-custom-secondary:hover {
+        background-color: #23272b;
+    }
+
+/* --- PÁGINA PRINCIPAL (INDEX DENÚNCIAS) --- */
+.welcome-header {
+    text-align: center;
+    font-weight: 900;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.sos-section {
+    background-color: var(--cor-container);
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+    .sos-section:hover {
+        transform: translateY(-5px);
+    }
+
+.sos-icon {
+    background-color: var(--cor-perigo);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    min-width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 25px;
+}
+
+.sos-info h3 {
+    margin: 0;
+    font-weight: 700;
+}
+
+.sos-info p {
+    margin: 5px 0 0 0;
+    color: var(--cor-texto-suave);
+}
+
+.section-title {
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    border-bottom: 3px solid var(--cor-principal);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* --- ESTILOS DOS CARDS DE DENÚNCIA --- */
+.denuncias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 30px;
+}
+
+.denuncia-card-pro {
+    background-color: var(--cor-container);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+    .denuncia-card-pro:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+
+.denuncia-card-pro-body {
+    padding: 25px;
+    flex-grow: 1;
+}
+
+.denuncia-card-pro-header h3 {
+    margin: 0;
+    font-weight: 700;
+    color: var(--cor-azul-logo);
+    font-size: 1.25rem;
+}
+
+.denuncia-card-pro-body p {
+    color: var(--cor-texto-suave);
+    line-height: 1.6;
+    margin-top: 15px;
+}
+
+.denuncia-card-pro-footer {
+    padding: 20px 25px;
+    background-color: var(--cor-fundo-claro);
+    border-top: 1px solid var(--cor-borda);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.card-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.card-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+    .card-tag.status-aberta {
+        border-color: #FFC107;
+        background-color: #fff9e6;
+    }
+
+    .card-tag.status-analise {
+        border-color: #17A2B8;
+        background-color: #e7f6f8;
+    }
+
+    .card-tag.status-fechada {
+        border-color: #28A745;
+        background-color: #eaf6eb;
+    }
+
+.protocol-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e9ecef;
+    padding: 8px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+    .protocol-section button {
+        background-color: #6c757d;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+    }
+
+.btn-visualizar {
+    background-color: var(--cor-principal);
+    color: white !important;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+    .btn-visualizar:hover {
+        background-color: #218838;
+    }
+
+/* --- FORMULÁRIOS INTERNOS (CREATE, EDIT) E PÁGINAS (DETAILS, DELETE) --- */
+.form-container, .details-view, .delete-view {
+    background-color: var(--cor-container);
+    padding: 30px 40px;
+    border-radius: 15px;
+}
+
+    .form-container h1, .details-view h1, .delete-view h1 {
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 30px;
+}
+
+.grid-full-width {
+    grid-column: 1 / -1;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    border-top: 1px solid var(--cor-borda);
+    padding-top: 20px;
+}
+
+.btn-form {
+    padding: 12px 25px;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    color: white !important;
+}
+
+.btn-form-primary {
+    background-color: var(--cor-principal);
+}
+
+.btn-form-secondary {
+    background-color: var(--cor-texto-suave);
+}
+
+.btn-form.btn-danger {
+    background-color: var(--cor-perigo);
+}
+
+.emergency-panel-pro {
+    background-color: var(--cor-container);
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+    .emergency-panel-pro .panel-title {
+        font-weight: 900;
+        text-align: center;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .emergency-panel-pro .panel-subtitle {
+        text-align: center;
+        color: var(--cor-texto-suave);
+        margin-bottom: 30px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+.emergency-actions {
+    background-color: var(--cor-fundo-claro);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--cor-borda);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+    .emergency-actions h5 {
+        margin: 0;
+        font-weight: 700;
+        color: var(--cor-texto-suave);
+    }
+
+.btn-emergency {
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s;
+}
+
+    .btn-emergency:hover {
+        transform: scale(1.05);
+    }
+
+    .btn-emergency.danger {
+        background-color: var(--cor-perigo);
+        color: white;
+    }
+
+    .btn-emergency.safe {
+        background-color: var(--cor-principal);
+        color: white;
+    }
+
+.status-alert {
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.status-alert-info {
+    background-color: #e7f3fe;
+    color: #0d6efd;
+}
+
+.status-alert-success {
+    background-color: #eaf6eb;
+    color: #198754;
+}
+
+.status-alert-danger {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.map-frame {
+    border: 1px solid var(--cor-borda);
+    border-radius: 10px;
+    width: 100%;
+    height: 450px;
+    background-color: var(--cor-fundo-claro); /* Cor de fundo enquanto carrega */
+}

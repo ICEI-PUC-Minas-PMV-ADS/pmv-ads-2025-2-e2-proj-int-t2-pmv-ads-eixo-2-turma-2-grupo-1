@@ -13,13 +13,12 @@ namespace SistemaDenuncias.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Opcional: Configuração explícita da chave estrangeira,
-            // mas o Entity Framework geralmente a infere automaticamente
+          
             modelBuilder.Entity<Denuncia>()
                 .HasOne(d => d.Usuario)
-                .WithMany() // Se um usuário pode ter muitas denúncias, mas uma denúncia tem apenas um usuário
+                .WithMany() 
                 .HasForeignKey(d => d.UsuarioId)
-                .OnDelete(DeleteBehavior.Restrict); // Evita a exclusão em cascata por padrão
+                .OnDelete(DeleteBehavior.Restrict);
 
             base.OnModelCreating(modelBuilder);
         }

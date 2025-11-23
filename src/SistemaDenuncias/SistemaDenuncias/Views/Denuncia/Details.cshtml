@@ -1,87 +1,43 @@
 ﻿@model SistemaDenuncias.Models.Denuncia
-
 @{
-    ViewData["Title"] = "Detalhes da Denúncia: " + Model.Protocolo;
+    ViewData["Title"] = "Detalhes da Denúncia";
+    Layout = "~/Views/Shared/_UsuarioLayout.cshtml";
 }
 
-<h1 class="mb-4">Detalhes da Denúncia</h1>
+<div class="user-content-wrapper">
+    <div class="details-view">
+        <h1><i class="bi bi-file-earmark-text"></i> Detalhes da Denúncia</h1>
 
-<div class="card shadow-lg mb-5 border-0">
-    <div class="card-header details-header p-3">
-        <h5 class="mb-0">Protocolo: <span class="fw-bold">@Html.DisplayFor(model => model.Protocolo)</span></h5>
+        <div class="details-row"><div class="details-label">Protocolo:</div><div class="details-value fw-bold text-primary">@Html.DisplayFor(model => model.Protocolo)</div></div>
+        <div class="details-row">
+            <div class="details-label">Status:</div>
+            <div class="details-value">
+                @{
+                    var statusClass = "status-analise";
+                    if (Model.Status == StatusDenuncia.Aberta) { statusClass = "status-aberta"; }
+                    else if (Model.Status == StatusDenuncia.Fechada) { statusClass = "status-fechada"; }
+                }
+                <span class="card-tag @statusClass" style="font-size: 16px;">@Html.DisplayFor(model => model.Status)</span>
+            </div>
+        </div>
+        <div class="details-row"><div class="details-label">Data de Criação:</div><div class="details-value">@Model.DataCriacao.ToString("dd/MM/yyyy 'às' HH:mm")</div></div>
+        <div class="details-row"><div class="details-label">Tipo de Denúncia:</div><div class="details-value">@Html.DisplayFor(model => model.TipoDenuncia)</div></div>
+        <div class="details-row"><div class="details-label">Descrição:</div><div class="details-value" style="white-space: pre-wrap;">@Html.DisplayFor(model => model.Descricao)</div></div>
+        <div class="details-row"><div class="details-label">Denúncia Anônima:</div><div class="details-value">@(Model.DenunciaAnonima ? "Sim" : "Não")</div></div>
+
+        <h5 class="mt-4">Localização Registrada</h5><hr />
+
+        <div class="details-row"><div class="details-label">Endereço:</div><div class="details-value">@($"{Model.Rua}, {Model.Numero} - {Model.Bairro}, {Model.Cidade} - {Model.Estado}")</div></div>
+        <div class="details-row"><div class="details-label">CEP:</div><div class="details-value">@Html.DisplayFor(model => model.Cep)</div></div>
+        <div class="details-row"><div class="details-label">Complemento:</div><div class="details-value">@Html.DisplayFor(model => model.Complemento)</div></div>
+
+        <div class="form-actions">
+            <a asp-action="Index" class="btn-form btn-form-secondary">Voltar</a>
+            @if (Model.Status != StatusDenuncia.Fechada)
+            {
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn-form btn-form-primary"><i class="bi bi-pencil"></i> Editar</a>
+                <a asp-action="Delete" asp-route-id="@Model.Id" class="btn-form btn-danger"><i class="bi bi-trash"></i> Excluir</a>
+            }
+        </div>
     </div>
-    <div class="card-body p-4">
-
-        <h6 class="border-bottom pb-2 mb-3 text-secondary">Informações Principais</h6>
-
-        <dl class="row mb-4 details-dl">
-
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.Status)
-            </dt>
-            <dd class="col-sm-9">
-                <span class="badge p-2
-                      @(Model.Status == SistemaDenuncias.Models.StatusDenuncia.Aberta ? "bg-warning text-dark" :
-                                              Model.Status == SistemaDenuncias.Models.StatusDenuncia.Analise ? "bg-info text-white" :
-                                              "bg-success text-white")">
-                    @Html.DisplayFor(model => model.Status)
-                </span>
-            </dd>
-
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.TipoDenuncia)
-            </dt>
-            <dd class="col-sm-9">
-                @Html.DisplayFor(model => model.TipoDenuncia)
-            </dd>
-
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.DataCriacao)
-            </dt>
-            <dd class="col-sm-9">
-                @Html.DisplayFor(model => model.DataCriacao)
-            </dd>
-
-            <dt class="col-sm-3">
-                @Html.DisplayNameFor(model => model.DenunciaAnonima)
-            </dt>
-            <dd class="col-sm-9">
-                <span class="badge @(Model.DenunciaAnonima ? "bg-dark" : "bg-light text-dark border")">
-                    @(Model.DenunciaAnonima ? "Sim (Anonimato Solicitado)" : "Não")
-                </span>
-            </dd>
-        </dl>
-
-        <h6 class="border-bottom pb-2 mb-3 mt-4 text-secondary">Descrição do Fato</h6>
-        <p class="details-description">
-            @Html.DisplayFor(model => model.Descricao)
-        </p>
-
-        <h6 class="border-bottom pb-2 mb-3 mt-4 text-secondary">Localização</h6>
-        <dl class="row details-dl">
-            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Rua)</dt>
-            <dd class="col-sm-9">@Html.DisplayFor(model => model.Rua), @Html.DisplayFor(model => model.Numero)</dd>
-
-            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Bairro)</dt>
-            <dd class="col-sm-9">@Html.DisplayFor(model => model.Bairro)</dd>
-
-            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Complemento)</dt>
-            <dd class="col-sm-9">@Html.DisplayFor(model => model.Complemento)</dd>
-
-            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Cidade)</dt>
-            <dd class="col-sm-9">@Html.DisplayFor(model => model.Cidade) - @Html.DisplayFor(model => model.Estado)</dd>
-
-            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Cep)</dt>
-            <dd class="col-sm-9">@Html.DisplayFor(model => model.Cep)</dd>
-        </dl>
-    </div>
-</div>
-
-<div class="d-flex justify-content-end gap-2 mt-4">
-    @if (Model.Status != SistemaDenuncias.Models.StatusDenuncia.Fechada)
-    {
-        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning btn-lg">Editar</a>
-        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger btn-lg">Excluir</a>
-    }
-    <a asp-action="Index" class="btn btn-secondary btn-lg">Voltar para a Lista</a>
 </div>

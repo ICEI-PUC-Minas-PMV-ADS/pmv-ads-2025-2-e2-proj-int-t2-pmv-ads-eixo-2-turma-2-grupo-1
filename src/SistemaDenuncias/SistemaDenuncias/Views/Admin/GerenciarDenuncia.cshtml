@@ -1,0 +1,120 @@
+﻿@model SistemaDenuncias.Models.Denuncia
+@using SistemaDenuncias.Models
+@{
+    ViewData["Title"] = "Gerenciar Denúncia";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    .details-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .details-card {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+        .details-card h5 {
+            font-weight: 700;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+    .details-label {
+        font-weight: bold;
+    }
+</style>
+
+<div class="admin-denuncias-container">
+    <h1>Detalhes da Denúncia - Protocolo @Model.Protocolo</h1>
+    <hr />
+
+    <div class="details-grid">
+        <div class="details-card">
+            <h5><i class="fa-solid fa-bullhorn"></i> Informações da Denúncia</h5>
+            <p><span class="details-label">Tipo:</span> @Model.TipoDenuncia</p>
+            <p><span class="details-label">Data:</span> @Model.DataCriacao.ToString("dd/MM/yyyy 'às' HH:mm")</p>
+            <p><span class="details-label">Descrição:</span></p>
+            <p>@Model.Descricao</p>
+        </div>
+
+        <div class="details-card">
+            <h5><i class="fa-solid fa-user"></i> Informações do Denunciante</h5>
+            <p><span class="details-label">Status de Anonimato:</span> @(Model.DenunciaAnonima ? "Anônimo" : "Identificado")</p>
+            @if (!Model.DenunciaAnonima)
+            {
+                <p><span class="details-label">Nome:</span> @Model.Usuario.Nome</p>
+                <p><span class="details-label">Email:</span> @Model.Usuario.Email</p>
+                <p><span class="details-label">Telefone:</span> @Model.Usuario.Telefone</p>
+            }
+        </div>
+
+        <div class="details-card">
+            <h5><i class="fa-solid fa-map-location-dot"></i> Localização do Fato</h5>
+            <p>@($"{Model.Rua}, {Model.Numero} - {Model.Bairro}, {Model.Cidade} - {Model.Estado}")</p>
+            <p><span class="details-label">CEP:</span> @Model.Cep</p>
+            <p><span class="details-label">Complemento:</span> @Model.Complemento</p>
+        </div>
+
+        <div class="details-card">
+            <h5><i class="fa-solid fa-clipboard-check"></i> Gerenciar Status</h5>
+            <p><span class="details-label">Status Atual:</span> <span id="status-atual-texto">@Model.Status.ToString()</span></p>
+            <div class="form-group">
+                <label for="statusSelect">Alterar Status para:</label>
+                <select id="statusSelect" class="form-select mt-2">
+                    <option value="@StatusDenuncia.Aberta">Aberta</option>
+                    <option value="@StatusDenuncia.Analise">Em Análise</option>
+                    <option value="@StatusDenuncia.Fechada">Fechada</option>
+                </select>
+            </div>
+            <button class="btn btn-primary mt-3" onclick="atualizarStatus()">Salvar Novo Status</button>
+            <div id="feedback" class="mt-2"></div>
+        </div>
+    </div>
+
+    <a asp-action="Index" class="btn btn-secondary mt-4">Voltar para a Lista</a>
+</div>
+
+@section Scripts {
+    <script>
+        // Define o valor inicial do select para o status atual da denúncia
+        document.getElementById('statusSelect').value = "@Model.Status";
+
+        async function atualizarStatus() {
+            const select = document.getElementById('statusSelect');
+            const novoStatus = select.value;
+            const denunciaId = @Model.Id;
+            const feedbackDiv = document.getElementById('feedback');
+
+            feedbackDiv.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Salvando...';
+
+            try {
+                const response = await fetch(`/Admin/AtualizarStatus?denunciaId=${denunciaId}&novoStatus=${novoStatus}`, {
+                    method: 'POST'
+                   
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    feedbackDiv.className = 'mt-2 text-success';
+                    feedbackDiv.innerText = result.message;
+                   
+                    document.getElementById('status-atual-texto').innerText = select.options[select.selectedIndex].text;
+                } else {
+                    feedbackDiv.className = 'mt-2 text-danger';
+                    feedbackDiv.innerText = 'Erro: ' + result.message;
+                }
+            } catch (error) {
+                console.error("Erro ao atualizar status:", error);
+                feedbackDiv.className = 'mt-2 text-danger';
+                feedbackDiv.innerText = 'Ocorreu um erro de comunicação.';
+            }
+        }
+    </script>
+}

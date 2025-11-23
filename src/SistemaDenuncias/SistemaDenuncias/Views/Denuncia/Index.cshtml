@@ -1,94 +1,83 @@
 ﻿@model IEnumerable<SistemaDenuncias.Models.Denuncia>
-
 @{
-    ViewData["Title"] = "Minhas Denúncias";
+    ViewData["Title"] = "Painel Principal";
+    Layout = "~/Views/Shared/_UsuarioLayout.cshtml";
 }
 
-<h2 class="mb-5 text-center text-primary">Minhas Denúncias Registradas</h2>
+<div class="user-content-wrapper">
+    <h1 class="welcome-header">SEJA BEM VINDO(A), @User.Identity.Name!</h1>
 
-@if (TempData["Sucesso"] != null)
-{
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        @TempData["Sucesso"]
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-}
-@if (TempData["Erro"] != null)
-{
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        @TempData["Erro"]
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-}
-
-<div class="mb-4 d-flex justify-content-between align-items-center">
-
-    @* BOTÃO DE EMERGÊNCIA - NOVO CÓDIGO *@
-    <button id="btnEmergencia" class="btn btn-danger btn-lg shadow-lg" style="animation: pulse 1.5s infinite;">
-        <i class="bi bi-geo-alt-fill me-2"></i> **EMERGÊNCIA! (Compartilhar Localização)**
-    </button>
-    @* FIM DO NOVO CÓDIGO *@
-
-    <a asp-action="Create" class="btn btn-primary btn-lg shadow-sm">
-        <i class="bi bi-plus-circle-fill me-2"></i> Registrar Nova Denúncia
-    </a>
-</div>
-
-@if (!Model.Any())
-{
-    <div class="alert alert-info text-center mt-5 p-4 border-info">
-        <h4 class="alert-heading">Nenhuma Denúncia!</h4>
-        <p>Você ainda não possui denúncias registradas no sistema.</p>
-        <hr>
-        <p class="mb-0">Clique em "Nova Denúncia" ou use o botão de EMERGÊNCIA se precisar de ajuda imediata.</p>
-    </div>
-}
-else
-{
-    <div class="denuncia-grid">
-        @foreach (var item in Model)
-        {
-            <div class="denuncia-card @("status-" + item.Status)">
-                <div class="card-body">
-                    <span class="card-protocolo mb-3">@item.Protocolo</span>
-
-                    <div class="d-flex justify-content-between align-items-center mt-2">
-                        <h5 class="card-title-denuncia text-truncate">@item.TipoDenuncia</h5>
-                        <span class="badge p-2
-                                      @(item.Status == SistemaDenuncias.Models.StatusDenuncia.Aberta ? "bg-warning text-dark" :
-                                                              item.Status == SistemaDenuncias.Models.StatusDenuncia.Analise ? "bg-info text-white" :
-                                                              "bg-success text-white")">
-                    @(item.Status == SistemaDenuncias.Models.StatusDenuncia.Analise ? "Em Análise" : item.Status.ToString())
-                </span>
+    <a asp-controller="Denuncia" asp-action="LocalizacaoEmTempoReal" style="text-decoration:none; color:inherit;">
+        <div class="sos-section">
+            <div class="sos-icon">SOS</div>
+            <div class="sos-info">
+                <h3>Ativar modo SOS</h3>
+                <p>Esta função envia um alerta de emergência com sua localização em tempo real para os administradores, permitindo uma resposta rápida e segura.</p>
             </div>
+        </div>
+    </a>
 
-                    <div class="card-meta-info">
-                        <p class="mb-1"><i class="bi bi-calendar"></i> Data: @item.DataCriacao.ToString("dd/MM/yyyy HH:mm")</p>
-                        <p class="mb-0"><i class="bi bi-geo-alt"></i> Local: @item.Cidade - @item.Estado</p>
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h2 class="section-title">DENÚNCIAS REGISTRADAS</h2>
+    </div>
+
+    @if (Model.Any())
+    {
+        <div class="denuncias-grid">
+            @foreach (var item in Model)
+            {
+                <div class="denuncia-card-pro">
+                    <div class="denuncia-card-pro-body">
+                        <div class="denuncia-card-pro-header">
+                            <h3>@Html.DisplayFor(modelItem => item.TipoDenuncia)</h3>
+                        </div>
+                        <p>@Html.DisplayFor(modelItem => item.Descricao)</p>
                     </div>
-
-                    <div class="card-actions d-flex justify-content-end gap-2">
-                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-secondary">Detalhes</a>
-                @if (item.Status != SistemaDenuncias.Models.StatusDenuncia.Fechada)
-                        {
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-primary">Editar</a>
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Excluir</a>
-                        }
+                    <div class="denuncia-card-pro-footer">
+                        <div class="card-tags-container">
+                            <div class="card-tag"><i class="bi bi-geo-alt"></i><span>@Html.DisplayFor(modelItem => item.Cidade)</span></div>
+                            @{
+                                var statusClass = "status-analise";
+                                if (item.Status == StatusDenuncia.Aberta) { statusClass = "status-aberta"; }
+                                else if (item.Status == StatusDenuncia.Fechada) { statusClass = "status-fechada"; }
+                            }
+                            <div class="card-tag @statusClass"><i class="bi bi-tag"></i><span>@item.Status.ToString()</span></div>
+                            <div class="card-tag"><i class="bi bi-calendar-event"></i><span>@item.DataCriacao.ToString("dd-MM-yyyy")</span></div>
+                        </div>
+                        <div class="protocol-section">
+                            <span>@item.Protocolo</span>
+                            <button onclick="copyProtocol('@item.Protocolo', this)">Copiar protocolo</button>
+                        </div>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn-visualizar">Visualizar Denúncia</a>
                     </div>
                 </div>
-            </div>
-        }
-    </div>
-}
+            }
+        </div>
+    }
+    else
+    {
+        <div class="text-center p-5 bg-white rounded-3">
+            <h4>Nenhuma denúncia registrada</h4>
+            <p>Você ainda não criou nenhuma denúncia. Clique em "Registrar Denúncia" no menu superior para começar.</p>
+        </div>
+    }
+</div>
 
 @section Scripts {
     <script>
-        document.getElementById('btnEmergencia').addEventListener('click', function () {
-            const confirmacao = confirm("ATENÇÃO: Você está em perigo? Ao confirmar, você concorda em compartilhar sua localização geográfica em tempo real para fins de emergência.");
-
-            if (confirmacao) {
-                window.location.href = '@Url.Action("LocalizacaoEmTempoReal", "Denuncia")';
-            }
-        });
+        function copyProtocol(protocol, element) {
+            navigator.clipboard.writeText(protocol).then(() => {
+                const originalText = element.innerText;
+                element.innerText = 'Copiado!';
+                element.style.backgroundColor = '#28a745';
+                setTimeout(() => {
+                    element.innerText = originalText;
+                    element.style.backgroundColor = '#6c757d';
+                }, 2000);
+            }).catch(err => {
+                console.error('Erro ao copiar protocolo: ', err);
+                alert('Não foi possível copiar o protocolo.');
+            });
+        }
     </script>
 }
