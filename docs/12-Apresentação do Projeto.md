@@ -19,7 +19,7 @@ O grupo deve ter o cuidado em utilizar figuras, imagens, e cores dentro do conte
 
 ## Conjunto de Slides (Estrutura)
 
-[Slides – PROTECSYS](docs/img/SLIDES%20-%20PROTECSYS.pdf)
+[Slides – PROTECSYS](docs/slides.pdf)
 
  
 > **Links Úteis**:
