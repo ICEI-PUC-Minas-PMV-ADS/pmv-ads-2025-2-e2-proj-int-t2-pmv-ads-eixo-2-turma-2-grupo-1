@@ -8,7 +8,6 @@ namespace SistemaDenuncias.Models
     public class Denuncia
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required(ErrorMessage = "O tipo de denúncia é obrigatório.")]
@@ -31,38 +30,44 @@ namespace SistemaDenuncias.Models
         [StringLength(150)]
         public string Rua { get; set; }
 
+        // --- CAMPOS OPCIONAIS CORRIGIDOS ---
+        // Adicionado '?' para indicar que estas strings podem ser nulas (opcionais).
+        // Isso resolve o problema de validação que exigia o preenchimento.
+
         [StringLength(100)]
-        public string Bairro { get; set; }
+        public string? Bairro { get; set; }
 
         [StringLength(10)]
-        public string Numero { get; set; }
+        public string? Numero { get; set; }
 
         [StringLength(200)]
-        public string Complemento { get; set; }
+        public string? Complemento { get; set; }
 
         [StringLength(9)]
         [Display(Name = "CEP")]
-        public string Cep { get; set; }
+        public string? Cep { get; set; }
 
+        // --- CAMPOS GERENCIADOS PELO SISTEMA ---
         [Required]
         [DataType(DataType.DateTime)]
         [Display(Name = "Data de Criação")]
-        public DateTime DataCriacao { get; set; } = DateTime.Now;
+        public DateTime DataCriacao { get; set; }
 
         [Required]
         [StringLength(20)]
         public string Protocolo { get; set; }
 
-        [Display(Name = "Denúncia Anônima")]
-        public bool DenunciaAnonima { get; set; }
-
         [Required]
-        public StatusDenuncia Status { get; set; } = StatusDenuncia.Aberta;
+        public StatusDenuncia Status { get; set; }
 
-        // Chave estrangeira para o usuário que criou a denúncia
+        // --- RELACIONAMENTO ---
         [ForeignKey("Usuario")]
         public int UsuarioId { get; set; }
         public virtual Usuario Usuario { get; set; }
+
+        // --- CAMPO PREENCHIDO PELO USUÁRIO ---
+        [Display(Name = "Denúncia Anônima")]
+        public bool DenunciaAnonima { get; set; }
     }
 
     public enum StatusDenuncia

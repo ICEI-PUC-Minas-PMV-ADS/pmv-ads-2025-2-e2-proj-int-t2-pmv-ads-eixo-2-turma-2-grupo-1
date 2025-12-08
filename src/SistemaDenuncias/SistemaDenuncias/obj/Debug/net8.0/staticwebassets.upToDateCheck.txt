@@ -1,3 +1,7 @@
+wwwroot\css\dashboard.css
+wwwroot\css\denuncias.css
+wwwroot\css\site.css
+wwwroot\css\usuario-style.css
 wwwroot\css\usuario.css
 wwwroot\favicon.ico
 wwwroot\font\LEMONMILK-Bold.otf
@@ -60,7 +64,3 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\css\dashboard.css
-wwwroot\css\denuncias.css
-wwwroot\css\site.css
-wwwroot\css\usuario-style.css
