@@ -1,16 +1,119 @@
 
-https://github.com/user-attachments/assets/05979904-5ac9-4de2-8703-78881bdf4f71
 # Apresentação
 
 <span style="color:red">Pré-requisitos: Todos os demais artefatos</span>
 
 ## Título do Projeto
 
-Nome e marca do projeto
+PROTECSys
 
 ## Identidade Visual (Marca, Design)
 
-O grupo deve ter o cuidado em utilizar figuras, imagens, e cores dentro do contexto da solução proposta, de forma a manter a temática do problema.
+### 🎨 Design System & Identidade Visual - PROTECSys
+
+Bem-vindo ao guia de estilo e identidade visual do **PROTECSys**. Este documento serve como referência central para garantir a consistência de design, cores e tipografia em toda a aplicação.
+
+O objetivo visual é manter uma temática sóbria, moderna e profissional, utilizando cores que transmitam segurança e clareza.
+
+---
+
+## 💎 Logotipo
+
+A marca **PROTECSys** é composta por uma tipografia geométrica forte com um destaque de cor na terminação, simbolizando tecnologia e proteção.
+
+| Versão | Descrição |
+| :--- | :--- |
+| **Principal** | Fundo escuro (`#333333`) com texto em Branco e sufixo em Azul (`#1976D2`). |
+| **Monocromática** | Uso em fundos de alta complexidade ou impressões P&B. |
+
+> **Nota:** Mantenha sempre o _padding_ (respiro) ao redor do logotipo, conforme demonstrado nos arquivos de layout.
+
+---
+
+## 🎨 Paleta de Cores
+
+A paleta foi selecionada para oferecer alto contraste em interfaces escuras (Dark Mode) e feedbacks claros ao usuário.
+
+### Cores Primárias e Neutras
+Estas são as cores base da estrutura do layout (fundos, textos e marca).
+
+| Amostra | Hex | Cor | Uso Principal |
+| :---: | :--- | :--- | :--- |
+| ![#1976D2](https://via.placeholder.com/15/1976D2/000000?text=+) | `#1976D2` | **Brand Blue** | Cor primária, botões de ação (CTA), links, destaque do logo. |
+| ![#333333](https://via.placeholder.com/15/333333/000000?text=+) | `#333333` | **Dark Grey** | Fundo principal, cards, headers. |
+| ![#BCBCBC](https://via.placeholder.com/15/BCBCBC/000000?text=+) | `#BCBCBC` | **Light Grey** | Textos secundários, bordas, ícones inativos. |
+
+### Cores Semânticas (Feedback)
+Cores funcionais utilizadas para comunicar estados do sistema ao usuário.
+
+| Amostra | Hex | Cor | Significado |
+| :---: | :--- | :--- | :--- |
+| ![#388E3C](https://via.placeholder.com/15/388E3C/000000?text=+) | `#388E3C` | **Success Green** | Validações, sucesso, confirmações. |
+| ![#FBC02D](https://via.placeholder.com/15/FBC02D/000000?text=+) | `#FBC02D` | **Warning Yellow** | Alertas, atenção, status pendente. |
+| ![#D32F2F](https://via.placeholder.com/15/D32F2F/000000?text=+) | `#D32F2F` | **Danger Red** | Erros, falhas, ações destrutivas (excluir). |
+
+---
+
+## 🔤 Tipografia
+
+A hierarquia tipográfica combina fontes geométricas para títulos com fontes funcionais para leitura.
+
+### 1. Títulos e Marca (Display)
+**Font Family:** `Lemon Milk`
+* **Uso:** Logotipo principal e grandes destaques.
+* **Características:** Geométrica, moderna, caixa alta.
+
+### 2. Subtítulos e Destaques
+**Font Family:** `Bebas Neue`
+* **Uso:** Cabeçalhos de seções, números grandes, cartões de dashboard.
+* **Peso:** Regular / Bold.
+
+### 3. Corpo de Texto e UI
+**Font Family:** `Roboto`
+* **Uso:** Parágrafos, labels de formulários, botões, tabelas.
+* **Pesos:**
+    * *Light (300)*: Textos grandes ou detalhes sutis.
+    * *Regular (400)*: Texto padrão.
+    * *Bold (700)*: Ênfase em dados importantes.
+
+---
+
+## 🧩 Iconografia
+
+Utilizamos a biblioteca **FontAwesome** para manter a consistência visual dos ícones.
+
+* **Estilo:** Solid ou Regular (manter consistência).
+* **Fonte:** [FontAwesome Official](https://fontawesome.com/)
+* **Exemplos de uso:**
+    * `<i class="fas fa-user"></i>` para perfil.
+    * `<i class="fas fa-shield-alt"></i>` para segurança/proteção.
+
+---
+
+## 💻 Implementação (CSS Variables)
+
+Para agilizar o desenvolvimento, utilize as variáveis CSS abaixo baseadas na paleta aprovada:
+
+```css
+:root {
+  /* Brand Colors */
+  --color-primary: #1976D2;
+  --color-background: #333333;
+  --color-text-secondary: #BCBCBC;
+  --color-text-white: #FFFFFF;
+
+  /* Semantic Colors */
+  --color-success: #388E3C;
+  --color-warning: #FBC02D;
+  --color-danger: #D32F2F;
+
+  /* Fonts */
+  --font-display: 'Lemon Milk', sans-serif;
+  --font-header: 'Bebas Neue', cursive;
+  --font-body: 'Roboto', sans-serif;
+}
+
+```
 
 > **Links Úteis**:
 > - [10 dicas de design para slides](https://rockcontent.com/blog/design-para-slides/)
